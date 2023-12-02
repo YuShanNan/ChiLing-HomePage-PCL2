@@ -1,0 +1,314 @@
+﻿<StackPanel.Resources>
+    <Style TargetType="local:MyButton" x:Key="RunButton">
+        <Setter Property="Margin" Value="5,0,0,5"/>
+        <Setter Property="Padding" Value="7,0,7,0"/>
+        <Setter Property="Height" Value="33"/>
+        <Setter Property="EventType" Value="启动游戏"/>
+    </Style>
+    <Style TargetType="local:MyButton" x:Key="WebSites">
+        <Setter Property="Margin" Value="5,0,0,5"/>
+        <Setter Property="Padding" Value="7,0,7,0"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="90"/>
+        <Setter Property="EventType" Value="打开网页"/>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="Text">
+        <Setter Property="FontWeight" Value="ExtraBold"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="Margin" Value="65,12,0,0"/>
+    </Style>
+</StackPanel.Resources>
+<StackPanel.Triggers>
+    <EventTrigger RoutedEvent="StackPanel.Loaded" >
+        <BeginStoryboard>
+            <Storyboard x:Name="animation" RepeatBehavior="Forever" >
+                <ColorAnimation BeginTime="0:0:2"
+                    Storyboard.TargetName="Text1"
+                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                    From="#ff7a4b2c" To="#00000000" Duration="0:0:3"/>
+                <ColorAnimation BeginTime="0:0:14"
+                    Storyboard.TargetName="Text1"
+                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                    From="#00000000" To="#ff7a4b2c" Duration="0:0:3"/>
+                <ColorAnimation BeginTime="0:0:4"
+                    Storyboard.TargetName="Text2"
+                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                    From="#00000000" To="#ff7a4b2c" Duration="0:0:3"/>
+                <ColorAnimation BeginTime="0:0:7"
+                    Storyboard.TargetName="Text2"
+                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                    From="#ff7a4b2c" To="#00000000" Duration="0:0:3"/>
+                <ColorAnimation BeginTime="0:0:9"
+                    Storyboard.TargetName="Text3"
+                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                    From="#00000000" To="#ff7a4b2c" Duration="0:0:3"/>
+                <ColorAnimation BeginTime="0:0:12"
+                    Storyboard.TargetName="Text3"
+                    Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                    From="#ff7a4b2c" To="#00000000" Duration="0:0:3"/>
+            </Storyboard>
+        </BeginStoryboard>
+    </EventTrigger>
+</StackPanel.Triggers>
+<local:MyCard Title="欢迎" Margin="-25,-25,-25,20" Height="40">
+    <TextBlock x:Name="Text1" Style="{StaticResource Text}" Foreground="#ff7a4b2c">
+        颌嶝Hé_Dèng
+    </TextBlock>
+    <TextBlock x:Name="Text2" Style="{StaticResource Text}" Foreground="#00000000">
+        宇杉楠Yŭ_Shán_Nán
+    </TextBlock>
+    <TextBlock x:Name="Text3" Style="{StaticResource Text}" Foreground="#00000000">
+       都是我呦~
+    </TextBlock>
+    <TextBlock Margin="0,13,38,0" Foreground="{DynamicResource ColorBrush5}" HorizontalAlignment="Right"
+        Text="颌嶝Hé_Dèng | 宇杉楠Yŭ_Shán_Nán" FontWeight="ExtraBold" FontStyle="Italic"/>
+    <local:MyButton Margin="0,10,15,10" Width="15" Height="15" HorizontalAlignment="Right" ToolTip="刷新" EventType="刷新主页">
+        <Path Fill="{DynamicResource ColorBrush5}" Stretch="Fill" Width="13" Height="15">
+            <Path.Data>
+                <PathGeometry FillRule="Nonzero" Figures="M256.455,8C322.724,8.119,382.892,34.233,427.314,76.685L463.029,40.97C478.149,25.851,504,36.559,504,57.941L504,192C504,205.255,493.255,216,480,216L345.941,216C324.559,216,313.851,190.149,328.97,175.029L370.72,133.279C339.856,104.38 299.919,88.372 257.49,88.006 165.092,87.208 87.207,161.983 88.0059999999999,257.448 88.764,348.009 162.184,424 256,424 297.127,424 335.997,409.322 366.629,382.444 371.372,378.283 378.535,378.536 382.997,382.997L422.659,422.659C427.531,427.531 427.29,435.474 422.177,440.092 378.202,479.813 319.926,504 256,504 119.034,504 8.001,392.967 8,256.002 7.999,119.193 119.646,7.755 256.455,8z"/>
+            </Path.Data>
+        </Path>
+    </local:MyButton>
+</local:MyCard>
+
+<Border BorderBrush="DarkTurquoise" BorderThickness="2" CornerRadius="8">
+	<Border.Background>
+		<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+			<GradientStop Color="LightCyan" Offset="0.0" />
+			<GradientStop Color="LightBlue" Offset="0.5" />
+			<GradientStop Color="DarkTurquoise" Offset="1.0" />
+		</LinearGradientBrush>
+			</Border.Background>
+    <StackPanel Margin="25,40,25,15" >
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image Height="125" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/1699703777440.png" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="美好的一天!Have a good time!" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,-10" Foreground="White">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="MouseEnter">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0:0:0.250" Storyboard.TargetProperty="FontSize" To="40" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="MouseLeave">
+                                    <EventTrigger.Actions>
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="30" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger.Actions>
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+        </StackPanel>
+    </StackPanel>
+		</Border>
+
+
+<Grid UseLayoutRounding="True">
+    <Grid.RowDefinitions>
+        <RowDefinition></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="10*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="7*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <GridSplitter Grid.Column="1" Width="5" Margin="0,0,0,20" Opacity="0"
+        VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+    <local:MyCard Title="皮肤and披风" CanSwap="True" Margin="0,20,0,20" IsSwaped="True">
+    <StackPanel Margin="25,50,25,25">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MyButton Margin="0,0,0,10" Width="180" Height="40" HorizontalAlignment="Center" Padding="13,0,13,0" ColorType="Highlight"
+                Text="打开PHP Minecraft Skin" EventType="打开网页" EventData="https://www.minecraftskins.com/" />
+            </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+             <local:MyButton Margin="0,0,0,10" Width="140" Height="35" HorizontalAlignment="Center" Padding="13,0,13,0" ColorType="Highlight"
+                Text="打开 NameMC" EventType="打开网页" EventData="https://namemc.com/" />
+            </StackPanel>
+         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MyButton Margin="0,0,0,0" Width="200" Height="35" HorizontalAlignment="Center" Padding="13,0,13,0" ColorType="Highlight"
+                Text="打开 Minecraft Skin Editor" EventType="打开网页" EventData="https://minecraft-skin-editor.com/cn/" />
+        </StackPanel>
+    </StackPanel>
+</local:MyCard>
+
+    <local:MyCard Title="♨♨♨" Margin="0,20,0,20" Grid.Row="0" Grid.Column="3" CanSwap="True" IsSwaped="True">
+        <StackPanel Margin="0,40,7,15">
+            <Image Height="250" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/未标题-1.png" />
+            <TextBlock Margin="0,5,0,0" Foreground="#5698c3" FontSize="27" Text="作者皮肤" HorizontalAlignment="Center"/>
+       </StackPanel>
+   </local:MyCard>
+</Grid>
+  
+<local:MyCard Title="资源网站" CanSwap="True" Margin="0,0,0,20" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <Image Height="50" Margin="7,0,0,3" HorizontalAlignment="Left" Source="https://www.mcbbs.net/template/mcbbs/image/logo_sc.png" />
+            <Image Height="50" Margin="25,0,0,3" HorizontalAlignment="Left" Source="https://www.mcmod.cn/images/logo.gif" />
+            <Image Height="45" Margin="32,0,0,3" HorizontalAlignment="left" Source="https://cc.klpbbs.com/logo.gif" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <local:MyButton Margin="10,0,10,10" Width="140" Height="35" HorizontalAlignment="Center"  Text="打开 MCBBS" EventType="打开网页" EventData="https://www.mcbbs.net/" />
+            <local:MyButton Margin="10,0,10,10" Width="140" Height="35" HorizontalAlignment="Center"
+            Text="打开 MC百科" EventType="打开网页"
+            EventData="https://www.mcmod.cn/" />
+            <local:MyButton Margin="10,0,10,10" Width="140" Height="35" HorizontalAlignment="Center"
+            Text="打开 苦力怕论坛" EventType="打开网页"
+            EventData="https://klpbbs.com/" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <Image Height="45" HorizontalAlignment="Left" Margin="60,0,0,0" Source="https://www.planetminecraft.com/images/layout/favicon-64.png" />
+            <Image Height="50" HorizontalAlignment="Left" Margin="110,0,0,0" Source="D:\minecraft\pcl2\PCL\主页\Mcnav_logo.png"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <local:MyButton Margin="10,0,10,10" Width="140" Height="35" HorizontalAlignment="Center"
+                   Text="打开 PlanetMinecraft" EventType="打开网页" EventData=" https://www.planetminecraft.com/"/>
+            <local:MyButton Margin="10,0,10,10" Width="140" Height="35" HorizontalAlignment="Center"
+                   Text="打开 MCNav" EventType="打开网页" EventData="https://www.mcnav.net/"/>
+        </StackPanel>
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="联机相关" CanSwap="True" Margin="0,0,0,25" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MyButton Margin="10,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
+                   Text="打开 LittleSkin" EventType="打开网页" EventData="https://littleskin.cn" />
+            <local:MyButton Margin="10,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
+                   Text="打开 红石皮肤站" EventType="打开网页" EventData="https://mcskin.cn/" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+             <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" 
+                   Text="打开 BlessingSkin" EventType="打开网页" EventData="https://skin.prinzeugen.net/" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
+                   Text="打开 Natfrp网站" EventType="打开网页" EventData="https://www.natfrp.com/?page=register" />
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
+                   Text="打开 OpenFrp网站" EventType="打开网页" EventData="https://www.openfrp.net/" />
+        </StackPanel>
+    </StackPanel>
+</local:MyCard>
+ <local:MyCard Title="相关文件" CanSwap="True" Margin="0,2,0,45" IsSwaped="True">
+    <StackPanel Margin="25,40,23,15">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                   Text="打开记事本" EventType="打开文件" EventData="notepad.exe" />
+            </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                       Text="打开 PCL 日志" EventType="打开文件" EventData="Log1.txt" ToolTip="PCL2 的日志文件就在 PCL 文件夹内，且名为 Log1.txt" />
+         </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                       Text="定位游戏启动脚本" EventType="打开文件" EventData="explorer.exe|/select,LatestLaunch.bat" ToolTip="PCL2 会将上一次启动 MC 的脚本保存在 PCL 文件夹内，且名为 LatestLaunch.bat。&#xA;点击按钮会打开文件管理器，并且借助参数要求它选中这个文件。" />
+        </StackPanel>
+    </StackPanel>
+</local:MyCard>
+<Grid UseLayoutRounding="True">
+    <Grid.RowDefinitions>
+        <RowDefinition></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="30*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="20*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+    <GridSplitter Grid.Column="1" Width="5" Margin="0,50,0,-20" Opacity="0"
+        VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+    <local:MyCard Title="WIKI" CanSwap="True" Margin="0,-20,0,50" IsSwaped="True" Grid.Row="0" Grid.Column="3">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyButton Margin="0,8,0,10" Width="150" Height="35" ColorType="Highlight"
+                   Text="打开 官方Wiki" EventType="打开网页" EventData="https://minecraft.wiki" ToolTip="点击打开网页,有几率打不开呦" />
+        <local:MyButton Margin="0,8,0,10" Width="150" Height="35" ColorType="Highlight"
+                   Text="打开 中文Wiki" EventType="打开网页" EventData="https://zh.minecraft.wiki/" ToolTip="点击打开网页" />
+    </StackPanel>
+</local:MyCard>
+<local:MyCard Title="其他功能" CanSwap="True" Margin="0,-20,0,50" IsSwaped="True" >
+    <StackPanel Margin="25,40,23,15">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
+                   Text="打开 B 站" EventType="打开网页" EventData="https://www.bilibili.com/" />
+             </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Red"
+                   Text="打开 oracle官网" EventType="打开网页" EventData="https://developer.oracle.com/zh/" />
+                 </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0"
+                   Text="打开画图" EventType="打开文件" EventData="mspaint.exe" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Red"
+                   Text="复制召唤命令" EventType="复制文本" EventData="/execute as @a at @s run summon Creeper ~ ~2 ~" ToolTip="这条 Minecraft 命令会在每个玩家头顶召唤一只苦力怕！" />
+             </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0"
+                   Text="刷新主页" EventType="刷新主页" ToolTip="这通常用于联网更新主页时刷新信息，对本地文件没啥用" />
+        </StackPanel>
+    </StackPanel>
+
+</local:MyCard>
+
+</Grid>
+
+<local:MyCard Title="🔯常用网站" Margin="0,-25,0,20" CanSwap="True" IsSwaped="True">
+    <WrapPanel Margin="25,40,25,15">
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="MC官网" EventData="https://minecraft.net/" ToolTip="此生无悔入MC&#xA;来世愿做方块人"/>
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="中文Wiki" EventData="http://minecraft-zh.gamepedia.com/Minecraft_Wiki" ToolTip="最详细的官方我的世界百科"/>
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="MCBBS" EventData="http://www.mcbbs.net/forum.php" ToolTip="Minecraft中文论坛"/>
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="MCForum" EventData="https://www.minecraftforum.net/" ToolTip="国外Minecraft论坛"/>
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="MC百科" EventData="https://www.mcmod.cn" ToolTip="最大的Minecraft中文MOD百科"/>
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="Curseforge" EventData="https://www.curseforge.com/minecraft" ToolTip="材质包、地图、MOD、整合包等下载&#xA;需要人机验证"/>
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="ChunkBase" EventData="https://chunkbase.com/apps/" ToolTip="查询史莱姆区块、群系、自然生成的建筑等"/>
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="MC Tools" EventData="https://minecraft.tools/en/" ToolTip="实用网站,可惜没有中文&#xA;可以自定义许多东西"/>
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="命令升级" EventData="https://spu.spgoding.com/" ToolTip="'SPU',可以将旧版本的命令升级到新版本使用"/>
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="服务端镜像" EventData="https://mirror.zerodream.net/" ToolTip="樱花镜像站&#xA;服务端常用核心下载，开服必备"/>
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="樱花映射" EventData="https://www.natfrp.com/?page=panel" ToolTip="端口映射&#xA;记得白嫖流量"/>
+        <local:MyButton Style="{StaticResource WebSites}" ColorType="Highlight"
+            Text="Bing" EventData="https://www.bing.com/" ToolTip="Bing搜索，抛弃百度吧"/>
+    </WrapPanel>
+</local:MyCard>
+
+<local:MyCard Title="▁▂▃▄▅▆▇█▇▆▅▄▃▂▁" Margin="0,0,0,20" CanSwap="True" IsSwaped="True">
+    <Grid UseLayoutRounding="True">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="215"></ColumnDefinition>
+            <ColumnDefinition Width="5"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Column="1" Width="5" Margin="0,0,0,20" Opacity="0"
+            VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+        <Calendar  HorizontalAlignment="Left" Margin="16,30,0,10" Grid.Row="0" Grid.Column="0"></Calendar>
+        <InkCanvas EditingMode="Ink" HorizontalAlignment="Right" Margin="0,30,15,10" Grid.Row="0" Grid.Column="2"
+            Width="1024" MaxHeight="768" MinHeight="100" Background="{DynamicResource ColorBrush5}">
+        </InkCanvas>
+    </Grid>
+</local:MyCard>
