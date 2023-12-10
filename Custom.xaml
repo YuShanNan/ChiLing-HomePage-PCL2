@@ -1,4 +1,4 @@
-﻿<StackPanel.Resources>
+<StackPanel.Resources>
     <Style TargetType="local:MyButton" x:Key="RunButton">
         <Setter Property="Margin" Value="5,0,0,5"/>
         <Setter Property="Padding" Value="7,0,7,0"/>
@@ -53,13 +53,13 @@
 </StackPanel.Triggers>
 <local:MyCard Title="欢迎" Margin="-25,-25,-25,20" Height="40">
     <TextBlock x:Name="Text1" Style="{StaticResource Text}" Foreground="#ff7a4b2c">
-        颌嶝Hé_Dèng
+        赤灵主页~
     </TextBlock>
     <TextBlock x:Name="Text2" Style="{StaticResource Text}" Foreground="#00000000">
-        宇杉楠Yŭ_Shán_Nán
+        简约又不失优雅~
     </TextBlock>
     <TextBlock x:Name="Text3" Style="{StaticResource Text}" Foreground="#00000000">
-       都是我呦~
+       维护人员请看右侧~
     </TextBlock>
     <TextBlock Margin="0,13,38,0" Foreground="{DynamicResource ColorBrush5}" HorizontalAlignment="Right"
         Text="颌嶝Hé_Dèng | 宇杉楠Yŭ_Shán_Nán" FontWeight="ExtraBold" FontStyle="Italic"/>
@@ -80,12 +80,12 @@
 			<GradientStop Color="DarkTurquoise" Offset="1.0" />
 		</LinearGradientBrush>
 			</Border.Background>
-    <StackPanel Margin="25,40,25,15" >
+    <StackPanel Margin="25,40,25,0" >
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Image Height="125" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/1699703777440.png" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="美好的一天!Have a good time!" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,-10" Foreground="White">
+            <TextBlock Text="美好的一天!Have a good time!" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,18" Foreground="White" >
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Style.Triggers>
@@ -93,7 +93,7 @@
                                     <EventTrigger.Actions>
                                         <BeginStoryboard>
                                             <Storyboard>
-                                                <DoubleAnimation Duration="0:0:0.250" Storyboard.TargetProperty="FontSize" To="40" />
+                                                <DoubleAnimation Duration="0:0:0.250" Storyboard.TargetProperty="FontSize" To="43" />
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </EventTrigger.Actions>
@@ -102,7 +102,7 @@
                                     <EventTrigger.Actions>
                                         <BeginStoryboard>
                                             <Storyboard>
-                                                <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="30" />
+                                                <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="32" />
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </EventTrigger.Actions>
@@ -112,36 +112,51 @@
                     </TextBlock.Style>
                 </TextBlock>
         </StackPanel>
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,-2">
+        <Image Height="30" Source="http://image.hhhhhy.kim/45/81.png" />
     </StackPanel>
-		</Border>
-
+    </StackPanel>
+</Border>
 
 <Grid UseLayoutRounding="True">
     <Grid.RowDefinitions>
         <RowDefinition></RowDefinition>
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="10*"></ColumnDefinition>
+        <ColumnDefinition Width="20*"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
-        <ColumnDefinition Width="7*"></ColumnDefinition>
+        <ColumnDefinition Width="11*"></ColumnDefinition>
     </Grid.ColumnDefinitions>
     <GridSplitter Grid.Column="1" Width="5" Margin="0,0,0,20" Opacity="0"
         VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
-    <local:MyCard Title="皮肤and披风" CanSwap="True" Margin="0,20,0,20" IsSwaped="True">
-    <StackPanel Margin="25,50,25,25">
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MyButton Margin="0,0,0,10" Width="180" Height="40" HorizontalAlignment="Center" Padding="13,0,13,0" ColorType="Highlight"
-                Text="打开PHP Minecraft Skin" EventType="打开网页" EventData="https://www.minecraftskins.com/" />
+
+<local:MyCard Title="快捷工具" CanSwap="True" Margin="0,20,0,20" IsSwaped="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="7*" />
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="百宝箱" BorderBrush="{DynamicResource ColorBrush3}" Margin="10,40,10,10">
+            <StackPanel>
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
+                Text="今日人品" EventType="今日人品" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ToolTip="将物理内存占用降低约1/3,不仅限于MC!  如果使用机械硬盘,这可能会导致一小段时间的严重卡顿。 使用 --memory 参数启动PCL可以静默执行内存优化。"
+                Text="内存优化" EventType="内存优化" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ToolTip="清理PCL的缓存与MC的日志、崩溃报告等垃圾文件"
+                Text="清理游戏垃圾" EventType="清理游戏垃圾" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ColorType="red" ToolTip="点下有惊喜呦"
+                Text="千万别点" EventType="千万别点" />
             </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-             <local:MyButton Margin="0,0,0,10" Width="140" Height="35" HorizontalAlignment="Center" Padding="13,0,13,0" ColorType="Highlight"
-                Text="打开 NameMC" EventType="打开网页" EventData="https://namemc.com/" />
-            </StackPanel>
-         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MyButton Margin="0,0,0,0" Width="200" Height="35" HorizontalAlignment="Center" Padding="13,0,13,0" ColorType="Highlight"
-                Text="打开 Minecraft Skin Editor" EventType="打开网页" EventData="https://minecraft-skin-editor.com/cn/" />
+        </GroupBox>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+            <Image Height="50" Margin="7,-1,0,0" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/fire_PNG6033.png" />
         </StackPanel>
-    </StackPanel>
+    </Grid>
 </local:MyCard>
 
     <local:MyCard Title="♨♨♨" Margin="0,20,0,20" Grid.Row="0" Grid.Column="3" CanSwap="True" IsSwaped="True">
@@ -153,33 +168,72 @@
 </Grid>
   
 <local:MyCard Title="资源网站" CanSwap="True" Margin="0,0,0,20" IsSwaped="True">
-    <StackPanel Margin="25,40,23,15">
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-            <Image Height="50" Margin="7,0,0,3" HorizontalAlignment="Left" Source="https://www.mcbbs.net/template/mcbbs/image/logo_sc.png" />
-            <Image Height="50" Margin="25,0,0,3" HorizontalAlignment="Left" Source="https://www.mcmod.cn/images/logo.gif" />
-            <Image Height="45" Margin="32,0,0,3" HorizontalAlignment="left" Source="https://cc.klpbbs.com/logo.gif" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="4">
+            <TextBlock Text="  " Margin="0,0,0,0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-            <local:MyButton Margin="10,0,10,10" Width="140" Height="35" HorizontalAlignment="Center"  Text="打开 MCBBS" EventType="打开网页" EventData="https://www.mcbbs.net/" />
-            <local:MyButton Margin="10,0,10,10" Width="140" Height="35" HorizontalAlignment="Center"
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0">
+            <Image Height="50" Margin="0,0,0,0" Source="https://www.mcbbs.net/template/mcbbs/image/logo_sc.png" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
+            <Image Height="50" Margin="0,0,0,0" Source="https://www.mcmod.cn/images/logo.gif" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2">
+            <Image Height="50" Margin="0,0,0,0" Source="https://cc.klpbbs.com/logo.gif" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3">
+            <Image Height="50" Margin="0,0,0,0" Source="https://www.planetminecraft.com/images/layout/favicon-64.png" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0">
+            <Image Height="50" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/MCNav_logo.png" />
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0">
+            <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
+            Text="打开 MCBBS" EventType="打开网页"
+            EventData="https://www.mcbbs.net/" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1">
+            <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
             Text="打开 MC百科" EventType="打开网页"
             EventData="https://www.mcmod.cn/" />
-            <local:MyButton Margin="10,0,10,10" Width="140" Height="35" HorizontalAlignment="Center"
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2">
+            <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
             Text="打开 苦力怕论坛" EventType="打开网页"
             EventData="https://klpbbs.com/" />
         </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="3">
+            <local:MyButton Margin="0,10,0,0" Width="140" Height="35" 
+            Text="打开 PlanetMinecraft" EventType="打开网页" 
+           EventData=" https://www.planetminecraft.com/"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0">
+            <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
+           Text="打开 MCNav" EventType="打开网页" 
+           EventData="https://www.mcnav.net/"/>
+        </StackPanel>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-            <Image Height="45" HorizontalAlignment="Left" Margin="60,0,0,0" Source="https://www.planetminecraft.com/images/layout/favicon-64.png" />
-            <Image Height="50" HorizontalAlignment="Left" Margin="110,0,0,0" Source="D:\minecraft\pcl2\PCL\主页\Mcnav_logo.png"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.ColumnSpan="4">
+            <TextBlock Text="  " Margin="0,0,0,0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-            <local:MyButton Margin="10,0,10,10" Width="140" Height="35" HorizontalAlignment="Center"
-                   Text="打开 PlanetMinecraft" EventType="打开网页" EventData=" https://www.planetminecraft.com/"/>
-            <local:MyButton Margin="10,0,10,10" Width="140" Height="35" HorizontalAlignment="Center"
-                   Text="打开 MCNav" EventType="打开网页" EventData="https://www.mcnav.net/"/>
-        </StackPanel>
-    </StackPanel>
+    </Grid>
 </local:MyCard>
 
 <local:MyCard Title="联机相关" CanSwap="True" Margin="0,0,0,25" IsSwaped="True">
@@ -223,9 +277,9 @@
         <RowDefinition></RowDefinition>
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="30*"></ColumnDefinition>
-        <ColumnDefinition Width="*"></ColumnDefinition>
         <ColumnDefinition Width="20*"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="11*"></ColumnDefinition>
     </Grid.ColumnDefinitions>
     <GridSplitter Grid.Column="1" Width="5" Margin="0,50,0,-20" Opacity="0"
         VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
