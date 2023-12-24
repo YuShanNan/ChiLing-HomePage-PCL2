@@ -61,10 +61,10 @@
     <TextBlock x:Name="Text3" Style="{StaticResource Text}" Foreground="#00000000">
        维护人员请看右侧~
     </TextBlock>
-    <TextBlock Margin="0,13,38,0" Foreground="{DynamicResource ColorBrush5}" HorizontalAlignment="Right"
+    <TextBlock Margin="0,13,38,0" Foreground="{DynamicResource ColorBrush4}" HorizontalAlignment="Right"
         Text="颌嶝Hé_Dèng | 宇杉楠Yŭ_Shán_Nán" FontWeight="ExtraBold" FontStyle="Italic"/>
     <local:MyButton Margin="0,10,15,10" Width="15" Height="15" HorizontalAlignment="Right" ToolTip="刷新" EventType="刷新主页">
-        <Path Fill="{DynamicResource ColorBrush5}" Stretch="Fill" Width="13" Height="15">
+        <Path Fill="{DynamicResource ColorBrush4}" Stretch="Fill" Width="13" Height="15">
             <Path.Data>
                 <PathGeometry FillRule="Nonzero" Figures="M256.455,8C322.724,8.119,382.892,34.233,427.314,76.685L463.029,40.97C478.149,25.851,504,36.559,504,57.941L504,192C504,205.255,493.255,216,480,216L345.941,216C324.559,216,313.851,190.149,328.97,175.029L370.72,133.279C339.856,104.38 299.919,88.372 257.49,88.006 165.092,87.208 87.207,161.983 88.0059999999999,257.448 88.764,348.009 162.184,424 256,424 297.127,424 335.997,409.322 366.629,382.444 371.372,378.283 378.535,378.536 382.997,382.997L422.659,422.659C427.531,427.531 427.29,435.474 422.177,440.092 378.202,479.813 319.926,504 256,504 119.034,504 8.001,392.967 8,256.002 7.999,119.193 119.646,7.755 256.455,8z"/>
             </Path.Data>
@@ -85,7 +85,7 @@
             <Image Height="125" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/1699703777440.png" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="美好的一天!Have a good time!" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,18" Foreground="White" >
+            <TextBlock Text="美好的一天!Have a good time!" FontSize="37" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,18" Foreground="White" >
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Style.Triggers>
@@ -102,7 +102,7 @@
                                     <EventTrigger.Actions>
                                         <BeginStoryboard>
                                             <Storyboard>
-                                                <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="32" />
+                                                <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="37" />
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </EventTrigger.Actions>
@@ -133,15 +133,15 @@
 <local:MyCard Title="快捷工具" CanSwap="True" Margin="0,20,0,20" IsSwaped="True">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
+            <RowDefinition Height="8*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="7*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="7*" />
         </Grid.ColumnDefinitions>
-        <GroupBox Header="百宝箱" BorderBrush="{DynamicResource ColorBrush3}" Margin="10,40,10,10">
+        <GroupBox Header="百宝箱" BorderBrush="{DynamicResource ColorBrush3}" Margin="10,40,10,10" Grid.Row="0" >
             <StackPanel>
                 <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
                 Text="今日人品" EventType="今日人品" />
@@ -156,13 +156,16 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
             <Image Height="50" Margin="7,-1,0,0" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/grass-ChaoCho.png" />
         </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2">
+            <TextBlock Margin="0,43,0,0" Foreground="{DynamicResource ColorBrush5}" FontSize="27" Text="这里不知道要放啥" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
     </Grid>
 </local:MyCard>
 
     <local:MyCard Title="♨♨♨" Margin="0,20,0,20" Grid.Row="0" Grid.Column="3" CanSwap="True" IsSwaped="True">
         <StackPanel Margin="0,40,7,15">
             <Image Height="250" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/未标题-1.png" />
-            <TextBlock Margin="0,5,0,0" Foreground="#5698c3" FontSize="27" Text="作者皮肤" HorizontalAlignment="Center"/>
+            <TextBlock Margin="0,5,0,0" Foreground="{DynamicResource ColorBrush4}" FontSize="27" Text="作者皮肤" HorizontalAlignment="Center"/>
        </StackPanel>
    </local:MyCard>
 </Grid>
@@ -214,6 +217,12 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1">
             <Image Height="28" Margin="0,0,0,0" Source="https://www.chunkbase.com/img/logo.png" />
         </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="2">
+            <Image Height="33" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/CurseforgeLogo.png" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="3">
+            <Image Height="38" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/ModrinthLogo.png" />
+        </StackPanel>
 
         <!-- 分-=-=-=-=-=-割-=-=-=-=-=-线 (上图片,下按钮)  -->
 
@@ -254,6 +263,18 @@
            EventData="https://www.chunkbase.com/apps/"
            ToolTip="能够查询关于种子的各种信息,群系分布、史莱姆区块等" />
         </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="2">
+            <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
+           Text="打开 Curseforge" EventType="打开网页" 
+           EventData="https://www.curseforge.com/minecraft/"
+           ToolTip="老牌国际资源站,拥有全球最多的资源,许多作者在此发布自己的作品" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="3">
+            <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
+           Text="打开 Modrinth" EventType="打开网页" 
+           EventData="https://www.curseforge.com/minecraft/"
+           ToolTip="新兴的资源站,许多作者从CF转来此发展,推荐使用此站" />
+        </StackPanel>
 
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.ColumnSpan="4">
@@ -263,25 +284,63 @@
 </local:MyCard>
 
 <local:MyCard Title="联机相关" CanSwap="True" Margin="0,0,0,25" IsSwaped="True">
-    <StackPanel Margin="25,40,23,15">
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MyButton Margin="10,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
-                   Text="打开 LittleSkin" EventType="打开网页" EventData="https://littleskin.cn" />
-            <local:MyButton Margin="10,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
-                   Text="打开 红石皮肤站" EventType="打开网页" EventData="https://mcskin.cn/" />
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+            <ColumnDefinition Width="10*" />
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="内网穿透" BorderBrush="{DynamicResource ColorBrush2}" Margin="10,40,10,10" Grid.RowSpan="2" >
+            <StackPanel>
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                EventType="打开网页" ColorType="HighLight"
+                EventData="https://www.natfrp.com/"
+                ToolTip="知名的内网穿透工具,在许多内网穿透教程中被使用" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                Text="Open Frp" EventType="打开网页" ColorType="HighLight"
+                EventData="https://www.openfrp.net/"
+                ToolTip="免费、高效、便捷" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                Text="Panda Frp" EventType="打开网页" ColorType="HighLight"
+                EventData="https://tryzth.com/"
+                ToolTip="多功能、更方便、更美观、高性能、更稳定、全免费" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                Text="Starry Frp" EventType="打开网页" ColorType="HighLight"
+                EventData="https://frp.starryfrp.com/"
+                ToolTip="她是一个免费的内网穿透,所有基于TCP协议的应用及协议,她都能胜任,UDP、HTTP、HTTPS、STCP这些协议也不在话下" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                Text="Natapp Frp" EventType="打开网页" ColorType="HighLight"
+                EventData="https://natapp.cn/"
+                ToolTip="简单、高效、快速、穿透一切" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                Text="Moss Frp" EventType="打开网页" ColorType="HighLight"
+                EventData="https://www.mossfrp.top/"
+                ToolTip="轻量，流畅，稳定，可白嫖的内网穿透~" />
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="皮肤站" BorderBrush="{DynamicResource ColorBrush2}" Margin="10,40,10,10" Grid.Column="1" >
+            <StackPanel>
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                Text="Little Skin" EventType="打开网页" ColorType="HighLight"
+                EventData="https://littleskin.cn/"
+                ToolTip="快速、可靠的公益 Minecraft 皮肤站" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                Text="红石皮肤站" EventType="打开网页" ColorType="HighLight"
+                EventData="https://mcskin.mahua-a.top/"
+                ToolTip="一个免费、自由的Minecraft皮肤站。四年历史，稳定可靠！" />
+            </StackPanel>
+        </GroupBox>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <Image Height="200" Margin="0,-7,0,-10" Source="http://image.hhhhhy.kim/45/Volcano.png" />
         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-             <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" 
-                   Text="打开 BlessingSkin" EventType="打开网页" EventData="https://skin.prinzeugen.net/" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
-                   Text="打开 Natfrp网站" EventType="打开网页" EventData="https://www.natfrp.com/?page=register" />
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
-                   Text="打开 OpenFrp网站" EventType="打开网页" EventData="https://www.openfrp.net/" />
-        </StackPanel>
-    </StackPanel>
+    </Grid>
 </local:MyCard>
+
  <local:MyCard Title="相关文件" CanSwap="True" Margin="0,2,0,45" IsSwaped="True">
     <StackPanel Margin="25,40,23,15">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
