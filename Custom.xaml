@@ -18,6 +18,18 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="65,12,0,0"/>
     </Style>
+    <ControlTemplate x:Key="Separator" TargetType="ContentControl">
+        <Grid Margin="0,0,0,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush5}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="0" />
+            <TextBlock Text="{TemplateBinding Content}" HorizontalAlignment="Center" FontSize="14" Foreground="{DynamicResource ColorBrush5}" Grid.Column="1" VerticalAlignment="Center" />
+            <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush5}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="2" />
+        </Grid>
+    </ControlTemplate>
 </StackPanel.Resources>
 <StackPanel.Triggers>
     <EventTrigger RoutedEvent="StackPanel.Loaded" >
@@ -61,8 +73,8 @@
     <TextBlock x:Name="Text3" Style="{StaticResource Text}" Foreground="#00000000">
        维护人员请看右侧~
     </TextBlock>
-    <TextBlock Margin="0,13,38,0" Foreground="{DynamicResource ColorBrush4}" HorizontalAlignment="Right"
-        Text="颌嶝Hé_Dèng | 宇杉楠Yŭ_Shán_Nán" FontWeight="ExtraBold" FontStyle="Italic"/>
+    <TextBlock Margin="0,13,38,0" Foreground="{DynamicResource ColorBrush5}" HorizontalAlignment="Right"
+        Text="山Shān | 宇杉楠Yŭ_Shán_Nán" FontWeight="ExtraBold" FontStyle="Italic"/>
     <local:MyButton Margin="0,10,15,10" Width="15" Height="15" HorizontalAlignment="Right" ToolTip="刷新" EventType="刷新主页">
         <Path Fill="{DynamicResource ColorBrush4}" Stretch="Fill" Width="13" Height="15">
             <Path.Data>
@@ -131,35 +143,37 @@
         VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
 
 <local:MyCard Title="快捷工具" CanSwap="True" Margin="0,20,0,20" IsSwaped="True">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="8*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="7*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="7*" />
-        </Grid.ColumnDefinitions>
-        <GroupBox Header="百宝箱" BorderBrush="{DynamicResource ColorBrush3}" Margin="10,40,10,10" Grid.Row="0" >
-            <StackPanel>
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
-                Text="今日人品" EventType="今日人品" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ToolTip="将物理内存占用降低约1/3,不仅限于MC!  如果使用机械硬盘,这可能会导致一小段时间的严重卡顿。 使用 --memory 参数启动PCL可以静默执行内存优化。"
-                Text="内存优化" EventType="内存优化" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ToolTip="清理PCL的缓存与MC的日志、崩溃报告等垃圾文件"
-                Text="清理游戏垃圾" EventType="清理游戏垃圾" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ColorType="red" ToolTip="点下有惊喜呦"
-                Text="千万别点" EventType="千万别点" />
+    <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="8*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="7*" />
+            </Grid.ColumnDefinitions>
+            <GroupBox Header="百宝箱" BorderBrush="{DynamicResource ColorBrush3}" Margin="10,40,10,10" Grid.Row="0" >
+                <StackPanel>
+                    <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
+                    Text="今日人品" EventType="今日人品" />
+                    <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ToolTip="将物理内存占用降低约1/3,不仅限于MC!&#xA;如果使用机械硬盘,这可能会导致一小段时间的严重卡顿&#xA;使用 --memory 参数启动PCL可以静默执行内存优化。"
+                    Text="内存优化" EventType="内存优化" />
+                    <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ToolTip="清理PCL的缓存与MC的日志、崩溃报告等垃圾文件"
+                    Text="清理游戏垃圾" EventType="清理游戏垃圾" />
+                    <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ColorType="red" ToolTip="点下有惊喜呦"
+                    Text="千万别点" EventType="千万别点" />
+                </StackPanel>
+            </GroupBox>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+                <Image Height="50" Margin="7,-1,0,0" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/grass-ChaoCho.png" />
             </StackPanel>
-        </GroupBox>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
-            <Image Height="50" Margin="7,-1,0,0" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/grass-ChaoCho.png" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2">
-            <TextBlock Margin="0,43,0,0" Foreground="{DynamicResource ColorBrush5}" FontSize="27" Text="这里不知道要放啥" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </StackPanel>
-    </Grid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
+                <TextBlock Margin="0,0,0,0" Foreground="{DynamicResource ColorBrush5}" FontSize="27" Text="这里不知道要放啥" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
 </local:MyCard>
 
     <local:MyCard Title="♨♨♨" Margin="0,20,0,20" Grid.Row="0" Grid.Column="3" CanSwap="True" IsSwaped="True">
@@ -171,116 +185,113 @@
 </Grid>
   
 <local:MyCard Title="资源网站" CanSwap="True" Margin="0,0,0,20" IsSwaped="True">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="18" />
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="10*" />
-            <RowDefinition Height="18" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10*" />
-            <ColumnDefinition Width="10*" />
-            <ColumnDefinition Width="10*" />
-            <ColumnDefinition Width="10*" />
-        </Grid.ColumnDefinitions>
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="4">
-            <TextBlock Text="  " Margin="0,0,0,0"/>
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0">
-            <Image Height="50" Margin="0,0,0,0" Source="https://www.mcbbs.net/template/mcbbs/image/logo_sc.png" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
-            <Image Height="50" Margin="0,0,0,0" Source="https://www.mcmod.cn/images/logo.gif" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2">
-            <Image Height="50" Margin="0,0,0,0" Source="https://cc.klpbbs.com/logo.gif" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3">
-            <Image Height="50" Margin="0,0,0,0" Source="https://www.planetminecraft.com/images/layout/favicon-64.png" />
-        </StackPanel>
-        <!-- ↑↑第一行图片↑↑ -->
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="4">
-            <TextBlock Text="  " Margin="0,0,0,0"/>
-        </StackPanel>
-
-        <!-- ↓↓第二行图片↓↓ -->
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0">
-            <Image Height="45" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/MCNav_logo.png" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1">
-            <Image Height="28" Margin="0,0,0,0" Source="https://www.chunkbase.com/img/logo.png" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="2">
-            <Image Height="33" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/CurseforgeLogo.png" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="3">
-            <Image Height="38" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/ModrinthLogo.png" />
-        </StackPanel>
-
-        <!-- 分-=-=-=-=-=-割-=-=-=-=-=-线 (上图片,下按钮)  -->
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0">
-            <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
-            Text="打开 MCBBS" EventType="打开网页"
-            EventData="https://www.mcbbs.net/"
-            ToolTip="Minecraft中文论坛,国内最大的MC社区,拥有国内最大的国际版玩家群体及最多的社区资源." />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1">
-            <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
-            Text="打开 MC百科" EventType="打开网页"
-            EventData="https://www.mcmod.cn/" 
-            ToolTip="MC百科,最大的Minecraft中文Mod百科." />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2">
-            <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
-            Text="打开 苦力怕论坛" EventType="打开网页"
-            EventData="https://klpbbs.com/"
-            ToolTip="klpbbs 苦力怕论坛,拥有大量基岩版搬运、汉化资源." />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="3">
-            <local:MyButton Margin="0,10,0,0" Width="140" Height="35" 
-            Text="打开 PlanetMinecraft" EventType="打开网页" 
-           EventData=" https://www.planetminecraft.com/"
-           ToolTip="拥有大量社区资源,能够找到许多奇奇怪怪的Mod,皮肤,数据包等" />
-        </StackPanel>
-
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0">
-            <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
-           Text="打开 MCNav" EventType="打开网页" 
-           EventData="https://www.mcnav.net/"
-           ToolTip="一个我的世界导航站,汇聚了大量优质网站,有了它,就有了一切(" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="1">
-            <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
-           Text="打开 Chunkbase" EventType="打开网页" 
-           EventData="https://www.chunkbase.com/apps/"
-           ToolTip="能够查询关于种子的各种信息,群系分布、史莱姆区块等" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="2">
-            <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
-           Text="打开 Curseforge" EventType="打开网页" 
-           EventData="https://www.curseforge.com/minecraft/"
-           ToolTip="老牌国际资源站,拥有全球最多的资源,许多作者在此发布自己的作品" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="3">
-            <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
-           Text="打开 Modrinth" EventType="打开网页" 
-           EventData="https://www.curseforge.com/minecraft/"
-           ToolTip="新兴的资源站,许多作者从CF转来此发展,推荐使用此站" />
-        </StackPanel>
+    <StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="18" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="10*" />
+                <RowDefinition Height="18" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+            </Grid.ColumnDefinitions>
 
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.ColumnSpan="4">
-            <TextBlock Text="  " Margin="0,0,0,0"/>
-        </StackPanel>
-    </Grid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.ColumnSpan="4">
+                <TextBlock Text="  " Margin="0,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0">
+                <Image Height="50" Margin="0,0,0,0" Source="https://www.mcbbs.net/template/mcbbs/image/logo_sc.png" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
+                <Image Height="50" Margin="0,0,0,0" Source="https://www.mcmod.cn/images/logo.gif" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2">
+                <Image Height="50" Margin="0,0,0,0" Source="https://cc.klpbbs.com/logo.gif" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3">
+                <Image Height="50" Margin="0,0,0,0" Source="https://www.planetminecraft.com/images/layout/favicon-64.png" />
+            </StackPanel>
+            <!-- ↑↑第一行图片↑↑ -->
+
+            <!-- ↓↓第二行图片↓↓ -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0">
+                <Image Height="45" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/MCNav_logo.png" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1">
+                <Image Height="28" Margin="0,0,0,0" Source="https://www.chunkbase.com/img/logo.png" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="2">
+                <Image Height="33" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/CurseforgeLogo.png" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="3">
+                <Image Height="38" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/ModrinthLogo.png" />
+            </StackPanel>
+
+            <!-- 分-=-=-=-=-=-割-=-=-=-=-=-线 (上图片,下按钮)  -->
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0">
+                <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
+                Text="打开 MCBBS" EventType="打开网页"
+                EventData="https://www.mcbbs.net/"
+                ToolTip="Minecraft中文论坛,国内最大的MC社区,拥有国内最大的国际版玩家群体及最多的社区资源." />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1">
+                <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
+                Text="打开 MC百科" EventType="打开网页"
+                EventData="https://www.mcmod.cn/" 
+                ToolTip="MC百科,最大的Minecraft中文Mod百科." />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2">
+                <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
+                Text="打开 苦力怕论坛" EventType="打开网页"
+                EventData="https://klpbbs.com/"
+                ToolTip="klpbbs 苦力怕论坛,拥有大量基岩版搬运、汉化资源." />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="3">
+                <local:MyButton Margin="0,10,0,0" Width="140" Height="35" 
+                Text="打开 PlanetMinecraft" EventType="打开网页" 
+            EventData=" https://www.planetminecraft.com/"
+            ToolTip="拥有大量社区资源,能够找到许多奇奇怪怪的Mod,皮肤,数据包等" />
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0">
+                <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
+            Text="打开 MCNav" EventType="打开网页" 
+            EventData="https://www.mcnav.net/"
+            ToolTip="一个我的世界导航站,汇聚了大量优质网站,有了它,就有了一切(" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="1">
+                <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
+            Text="打开 Chunkbase" EventType="打开网页" 
+            EventData="https://www.chunkbase.com/apps/"
+            ToolTip="能够查询关于种子的各种信息,群系分布、史莱姆区块等" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="2">
+                <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
+            Text="打开 Curseforge" EventType="打开网页" 
+            EventData="https://www.curseforge.com/minecraft/"
+            ToolTip="老牌国际资源站,拥有全球最多的资源,许多作者在此发布自己的作品" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="3">
+                <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
+            Text="打开 Modrinth" EventType="打开网页" 
+            EventData="https://www.curseforge.com/minecraft/"
+            ToolTip="新兴的资源站,许多作者从CF转来此发展,推荐使用此站" />
+            </StackPanel>
+
+
+
+        </Grid>
+    </StackPanel>
 </local:MyCard>
 
 <local:MyCard Title="联机相关" CanSwap="True" Margin="0,0,0,25" IsSwaped="True">
@@ -297,7 +308,7 @@
         <GroupBox Header="内网穿透" BorderBrush="{DynamicResource ColorBrush2}" Margin="10,40,10,10" Grid.RowSpan="2" >
             <StackPanel>
                 <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
-                EventType="打开网页" ColorType="HighLight"
+                Text="Sakura Frp" EventType="打开网页" ColorType="HighLight"
                 EventData="https://www.natfrp.com/"
                 ToolTip="知名的内网穿透工具,在许多内网穿透教程中被使用" />
                 <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
@@ -325,16 +336,46 @@
 
         <GroupBox Header="皮肤站" BorderBrush="{DynamicResource ColorBrush2}" Margin="10,40,10,10" Grid.Column="1" >
             <StackPanel>
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                <local:MyButton Margin="5,20,5,10" Width="150" Height="35" HorizontalAlignment="Center"
                 Text="Little Skin" EventType="打开网页" ColorType="HighLight"
                 EventData="https://littleskin.cn/"
                 ToolTip="快速、可靠的公益 Minecraft 皮肤站" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                <local:MyButton Margin="5,10,5,0" Width="150" Height="35" HorizontalAlignment="Center" 
                 Text="红石皮肤站" EventType="打开网页" ColorType="HighLight"
                 EventData="https://mcskin.mahua-a.top/"
-                ToolTip="一个免费、自由的Minecraft皮肤站。四年历史，稳定可靠！" />
+                ToolTip="一个免费、自由的Minecraft皮肤站,四年历史,稳定可靠!" />
             </StackPanel>
         </GroupBox>
+
+        <GroupBox Header="服务端核心" BorderBrush="{DynamicResource ColorBrush2}" Margin="10,40,10,10" Grid.Column="2" Grid.RowSpan="2" >
+            <StackPanel>
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                Text="Paper" EventType="打开网页" ColorType="HighLight"
+                EventData="https://papermc.io/"
+                ToolTip="较为知名的服务端核心,许多服务器使用此服务端核心,但你或许可以试试下面的核心" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
+                Text="Purpur" EventType="打开网页" ColorType="HighLight"
+                EventData="https://purpurmc.org/"
+                ToolTip="Purpur是Paper服务的直接替代品,旨在实现可配置性和新颖、有趣、令人兴奋的游戏玩法特征" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
+                Text="Mohist" EventType="打开网页" ColorType="HighLight"
+                EventData="https://mohistmc.com/"
+                ToolTip="Mohist是一个兼容Bukkit、Spigot和 Paper API的Forge服务器软件,这个项目是为了让模组和插件一起使用而制作的" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
+                Text="PocketMine" EventType="打开网页" ColorType="HighLight"
+                EventData="https://pmmp.io/"
+                ToolTip="基岩版核心,可加插件,但原版特性不完整，配置较为繁琐" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
+                Text="NukkitX" EventType="打开网页" ColorType="HighLight"
+                EventData="https://purpurmc.org/"
+                ToolTip="基岩版核心,可加插件,但原版特性不完整,配置较为繁琐" />
+                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
+                Text="Leaves" EventType="打开网页" ColorType="HighLight"
+                EventData="https://leavesmc.top/"
+                ToolTip="基于Paper的专为生电设计的核心,只支持最新版本" />
+            </StackPanel>
+        </GroupBox>
+
         <StackPanel Grid.Row="1" Grid.Column="1">
             <Image Height="200" Margin="0,-7,0,-10" Source="http://image.hhhhhy.kim/45/Volcano.png" />
         </StackPanel>
@@ -342,21 +383,63 @@
 </local:MyCard>
 
  <local:MyCard Title="相关文件" CanSwap="True" Margin="0,2,0,45" IsSwaped="True">
-    <StackPanel Margin="25,40,23,15">
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
-                   Text="打开记事本" EventType="打开文件" EventData="notepad.exe" />
+    <StackPanel Margin="23,40,23,15">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                <Image Height="190" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/bamboo_PNG71.png" />
             </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
-                       Text="打开 PCL 日志" EventType="打开文件" EventData="Log1.txt" ToolTip="PCL2 的日志文件就在 PCL 文件夹内，且名为 Log1.txt" />
-         </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
-                       Text="定位游戏启动脚本" EventType="打开文件" EventData="explorer.exe|/select,LatestLaunch.bat" ToolTip="PCL2 会将上一次启动 MC 的脚本保存在 PCL 文件夹内，且名为 LatestLaunch.bat。&#xA;点击按钮会打开文件管理器，并且借助参数要求它选中这个文件。" />
-        </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="4">
+                <Image Height="190" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/bamboo_PNG71_Dao.png" />
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Grid.Column="1" >
+                    <local:MyButton Margin="0,20,5,8" Width="140" Height="35" 
+                        Text="打开记事本" EventType="打开文件" EventData="notepad.exe" />
+                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                            Text="打开 PCL 日志" EventType="打开文件" EventData="Log1.txt"
+                            ToolTip="PCL2 的日志文件就在 PCL 文件夹内，且名为 Log1.txt" />               
+                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                            Text="定位游戏启动脚本" EventType="打开文件" EventData="explorer.exe|/select,LatestLaunch.bat" 
+                            ToolTip="PCL2 会将上一次启动 MC 的脚本保存在 PCL 文件夹内，且名为 LatestLaunch.bat。&#xA;点击按钮会打开文件管理器，并且借助参数要求它选中这个文件。" />
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="2">
+                    <local:MyButton Margin="0,28,0,8" Width="140" Height="35"
+                        Text="设置个性化" EventType="切换页面" EventData="3|1"
+                        ToolTip="点击切换到个性化界面" />
+                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                        Text="JDK17下载" EventType="打开网页" EventData="https://www.oracle.com/cn/java/technologies/downloads/#jdk17-windows"
+                        ToolTip="打开浏览器并跳转到JDK17的下载界面" />            
+                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                        Text="JAVA8下载" EventType="打开网页" EventData="https://www.java.com/en/download/manual.jsp" 
+                        ToolTip="打开浏览器并跳转到JDK8的下载界面" />
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Grid.Column="3">
+                    <local:MyButton Margin="5,20,0,8" Width="140" Height="35"
+                        Text="IBM JDK17下载" EventType="打开网页" EventData="https://developer.ibm.com/languages/java/semeru-runtimes/downloads/"
+                        ToolTip="打开浏览器并跳转到IBM JDK17的下载界面,点击标有Latest的版本后面的JDK栏的&#xA;标蓝msi字样开始下载。可降低内存占用，但兼容性不好。" />
+                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                        Text="「」" EventType="" EventData=""
+                        ToolTip="不知道要放啥" />            
+                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                        Text="「」" EventType="" EventData="" 
+                        ToolTip="不知道要放啥" />
+            </StackPanel>
+        </Grid>
     </StackPanel>
+
 </local:MyCard>
+
 <Grid UseLayoutRounding="True">
     <Grid.RowDefinitions>
         <RowDefinition></RowDefinition>
@@ -369,13 +452,14 @@
     <GridSplitter Grid.Column="1" Width="5" Margin="0,50,0,-20" Opacity="0"
         VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
     <local:MyCard Title="WIKI" CanSwap="True" Margin="0,-20,0,50" IsSwaped="True" Grid.Row="0" Grid.Column="3">
-    <StackPanel Margin="25,40,23,15">
-        <local:MyButton Margin="0,8,0,10" Width="150" Height="35" ColorType="Highlight"
-                   Text="打开 官方Wiki" EventType="打开网页" EventData="https://minecraft.wiki" ToolTip="点击打开网页,有几率打不开呦" />
-        <local:MyButton Margin="0,8,0,10" Width="150" Height="35" ColorType="Highlight"
-                   Text="打开 中文Wiki" EventType="打开网页" EventData="https://zh.minecraft.wiki/" ToolTip="点击打开网页" />
-    </StackPanel>
-</local:MyCard>
+        <StackPanel Margin="25,40,23,15">
+            <local:MyButton Margin="0,20,0,20" Width="150" Height="35" ColorType="Highlight"
+                    Text="打开 官方Wiki" EventType="打开网页" EventData="https://minecraft.wiki" ToolTip="点击打开网页,有几率打不开呦" />
+            <local:MyButton Margin="0,20,0,20" Width="150" Height="35" ColorType="Highlight"
+                    Text="打开 中文Wiki" EventType="打开网页" EventData="https://zh.minecraft.wiki/" ToolTip="点击打开网页" />
+        </StackPanel>
+    </local:MyCard>
+
 <local:MyCard Title="其他功能" CanSwap="True" Margin="0,-20,0,50" IsSwaped="True" >
     <StackPanel Margin="25,40,23,15">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
