@@ -1,15 +1,28 @@
+
+
+
+	<!-- 
+        **PCL2炽翎主页**
+	By： 雨杉楠Yu_Shan_Nan
+	维护：山Shān / 宇杉楠Yŭ_Shán_Nán(其实，是同一个人)
+	仓库：https://github.com/337267950/ChiLing-HomePage-PCL2/
+	协议：BSD-2-Clause license
+    版本：0.4.0-Beta
+     -->
+
 <StackPanel.Resources>
-    <Style TargetType="local:MyButton" x:Key="RunButton">
-        <Setter Property="Margin" Value="5,0,0,5"/>
-        <Setter Property="Padding" Value="7,0,7,0"/>
-        <Setter Property="Height" Value="33"/>
-        <Setter Property="EventType" Value="启动游戏"/>
-    </Style>
+
     <Style TargetType="local:MyButton" x:Key="WebSites">
         <Setter Property="Margin" Value="5,0,0,5"/>
         <Setter Property="Padding" Value="7,0,7,0"/>
         <Setter Property="Height" Value="35"/>
         <Setter Property="Width" Value="90"/>
+        <Setter Property="EventType" Value="打开网页"/>
+    </Style>
+    <Style TargetType="local:MyButton" x:Key="AboutOl">
+        <Setter Property="Margin" Value="5,10,5,8"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="132"/>
         <Setter Property="EventType" Value="打开网页"/>
     </Style>
     <Style TargetType="TextBlock" x:Key="Text">
@@ -18,7 +31,7 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="65,12,0,0"/>
     </Style>
-    <ControlTemplate x:Key="Separator" TargetType="ContentControl">
+    <ControlTemplate TargetType="ContentControl" x:Key="Separator" >
         <Grid Margin="0,0,0,15">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
@@ -65,7 +78,7 @@
 </StackPanel.Triggers>
 <local:MyCard Title="欢迎" Margin="-25,-25,-25,20" Height="40">
     <TextBlock x:Name="Text1" Style="{StaticResource Text}" Foreground="#ff7a4b2c">
-        赤灵主页~
+        炽翎主页~
     </TextBlock>
     <TextBlock x:Name="Text2" Style="{StaticResource Text}" Foreground="#00000000">
         简约又不失优雅~
@@ -97,7 +110,7 @@
             <Image Height="125" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/1699703777440.png" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="美好的一天!Have a good time!" FontSize="37" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,18" Foreground="White" >
+            <TextBlock Text="美好的一天!Have a good time!" FontSize="37" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,25,0,25" Foreground="White" >
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Style.Triggers>
@@ -307,29 +320,28 @@
         </Grid.ColumnDefinitions>
         <GroupBox Header="内网穿透" BorderBrush="{DynamicResource ColorBrush2}" Margin="10,40,10,10" Grid.RowSpan="2" >
             <StackPanel>
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
-                Text="Sakura Frp" EventType="打开网页" ColorType="HighLight"
-                EventData="https://www.natfrp.com/"
+                <local:MyButton Style="{StaticResource AboutOl}" ColorType="HighLight"
+                Text="Sakura Frp" EventData="https://www.natfrp.com/"
                 ToolTip="知名的内网穿透工具,在许多内网穿透教程中被使用" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
-                Text="Open Frp" EventType="打开网页" ColorType="HighLight"
-                EventData="https://www.openfrp.net/"
+
+                <local:MyButton Style="{StaticResource AboutOl}"
+                Text="Open Frp" EventData="https://www.openfrp.net/"
                 ToolTip="免费、高效、便捷" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
-                Text="Panda Frp" EventType="打开网页" ColorType="HighLight"
-                EventData="https://tryzth.com/"
+
+                <local:MyButton Style="{StaticResource AboutOl}" ColorType="HighLight"
+                Text="Panda Frp" EventData="https://tryzth.com/"
                 ToolTip="多功能、更方便、更美观、高性能、更稳定、全免费" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
-                Text="Starry Frp" EventType="打开网页" ColorType="HighLight"
-                EventData="https://frp.starryfrp.com/"
+                
+                <local:MyButton Style="{StaticResource AboutOl}" 
+                Text="Starry Frp" EventData="https://frp.starryfrp.com/"
                 ToolTip="她是一个免费的内网穿透,所有基于TCP协议的应用及协议,她都能胜任,UDP、HTTP、HTTPS、STCP这些协议也不在话下" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
-                Text="Natapp Frp" EventType="打开网页" ColorType="HighLight"
-                EventData="https://natapp.cn/"
+
+                <local:MyButton Style="{StaticResource AboutOl}" ColorType="HighLight"
+                Text="Natapp Frp" EventData="https://natapp.cn/"
                 ToolTip="简单、高效、快速、穿透一切" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
-                Text="Moss Frp" EventType="打开网页" ColorType="HighLight"
-                EventData="https://www.mossfrp.top/"
+
+                <local:MyButton Style="{StaticResource AboutOl}"
+                Text="Moss Frp" EventData="https://www.mossfrp.top/"
                 ToolTip="轻量，流畅，稳定，可白嫖的内网穿透~" />
             </StackPanel>
         </GroupBox>
@@ -349,29 +361,28 @@
 
         <GroupBox Header="服务端核心" BorderBrush="{DynamicResource ColorBrush2}" Margin="10,40,10,10" Grid.Column="2" Grid.RowSpan="2" >
             <StackPanel>
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
-                Text="Paper" EventType="打开网页" ColorType="HighLight"
-                EventData="https://papermc.io/"
+                <local:MyButton Style="{StaticResource AboutOl}" ColorType="HighLight"
+                Text="Paper" EventData="https://papermc.io/"
                 ToolTip="较为知名的服务端核心,许多服务器使用此服务端核心,但你或许可以试试下面的核心" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
-                Text="Purpur" EventType="打开网页" ColorType="HighLight"
-                EventData="https://purpurmc.org/"
+
+                <local:MyButton Style="{StaticResource AboutOl}" 
+                Text="Purpur" EventData="https://purpurmc.org/"
                 ToolTip="Purpur是Paper服务的直接替代品,旨在实现可配置性和新颖、有趣、令人兴奋的游戏玩法特征" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
-                Text="Mohist" EventType="打开网页" ColorType="HighLight"
-                EventData="https://mohistmc.com/"
+
+                <local:MyButton Style="{StaticResource AboutOl}" ColorType="HighLight"
+                Text="Mohist" EventData="https://mohistmc.com/"
                 ToolTip="Mohist是一个兼容Bukkit、Spigot和 Paper API的Forge服务器软件,这个项目是为了让模组和插件一起使用而制作的" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center"
-                Text="PocketMine" EventType="打开网页" ColorType="HighLight"
-                EventData="https://pmmp.io/"
+
+                <local:MyButton Style="{StaticResource AboutOl}" 
+                Text="PocketMine" EventData="https://pmmp.io/"
                 ToolTip="基岩版核心,可加插件,但原版特性不完整，配置较为繁琐" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
-                Text="NukkitX" EventType="打开网页" ColorType="HighLight"
-                EventData="https://purpurmc.org/"
+
+                <local:MyButton Style="{StaticResource AboutOl}" ColorType="HighLight"
+                Text="NukkitX" EventData="https://purpurmc.org/"
                 ToolTip="基岩版核心,可加插件,但原版特性不完整,配置较为繁琐" />
-                <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
-                Text="Leaves" EventType="打开网页" ColorType="HighLight"
-                EventData="https://leavesmc.top/"
+
+                <local:MyButton Style="{StaticResource AboutOl}" 
+                Text="Leaves" EventData="https://leavesmc.top/"
                 ToolTip="基于Paper的专为生电设计的核心,只支持最新版本" />
             </StackPanel>
         </GroupBox>
@@ -394,20 +405,20 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom">
-                <Image Height="190" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/bamboo_PNG71.png" />
+                <Image Height="190" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/tree_PNG92762.png"  />
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="4">
-                <Image Height="190" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/bamboo_PNG71_Dao.png" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="4">
+                <Image Height="190" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/tree_PNG92762.png" />
             </StackPanel>
 
             <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Grid.Column="1" >
-                    <local:MyButton Margin="0,20,5,8" Width="140" Height="35" 
+                    <local:MyButton Margin="0,20,5,8" Width="140" Height="35" ColorType="HighLight"
                         Text="打开记事本" EventType="打开文件" EventData="notepad.exe" />
                     <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
                             Text="打开 PCL 日志" EventType="打开文件" EventData="Log1.txt"
                             ToolTip="PCL2 的日志文件就在 PCL 文件夹内，且名为 Log1.txt" />               
-                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35" ColorType="HighLight"
                             Text="定位游戏启动脚本" EventType="打开文件" EventData="explorer.exe|/select,LatestLaunch.bat" 
                             ToolTip="PCL2 会将上一次启动 MC 的脚本保存在 PCL 文件夹内，且名为 LatestLaunch.bat。&#xA;点击按钮会打开文件管理器，并且借助参数要求它选中这个文件。" />
             </StackPanel>
@@ -416,7 +427,7 @@
                     <local:MyButton Margin="0,28,0,8" Width="140" Height="35"
                         Text="设置个性化" EventType="切换页面" EventData="3|1"
                         ToolTip="点击切换到个性化界面" />
-                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35" ColorType="HighLight"
                         Text="JDK17下载" EventType="打开网页" EventData="https://www.oracle.com/cn/java/technologies/downloads/#jdk17-windows"
                         ToolTip="打开浏览器并跳转到JDK17的下载界面" />            
                     <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
@@ -425,13 +436,13 @@
             </StackPanel>
 
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Grid.Column="3">
-                    <local:MyButton Margin="5,20,0,8" Width="140" Height="35"
+                    <local:MyButton Margin="5,20,0,8" Width="140" Height="35" ColorType="HighLight"
                         Text="IBM JDK17下载" EventType="打开网页" EventData="https://developer.ibm.com/languages/java/semeru-runtimes/downloads/"
                         ToolTip="打开浏览器并跳转到IBM JDK17的下载界面,点击标有Latest的版本后面的JDK栏的&#xA;标蓝msi字样开始下载。可降低内存占用，但兼容性不好。" />
                     <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
                         Text="「」" EventType="" EventData=""
                         ToolTip="不知道要放啥" />            
-                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35" ColorType="HighLight"
                         Text="「」" EventType="" EventData="" 
                         ToolTip="不知道要放啥" />
             </StackPanel>
@@ -453,35 +464,33 @@
         VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
     <local:MyCard Title="WIKI" CanSwap="True" Margin="0,-20,0,50" IsSwaped="True" Grid.Row="0" Grid.Column="3">
         <StackPanel Margin="25,40,23,15">
-            <local:MyButton Margin="0,20,0,20" Width="150" Height="35" ColorType="Highlight"
+            <Image Height="165" Margin="0,-20,0,-10" VerticalAlignment="Bottom" Source="https://zh.minecraft.wiki/images/Wiki%402x.png?809cd" />
+            <local:MyButton Margin="0,0,0,18" Width="150" Height="35" ColorType="Highlight"
                     Text="打开 官方Wiki" EventType="打开网页" EventData="https://minecraft.wiki" ToolTip="点击打开网页,有几率打不开呦" />
-            <local:MyButton Margin="0,20,0,20" Width="150" Height="35" ColorType="Highlight"
+            <local:MyButton Margin="0,0,0,2" Width="150" Height="35" ColorType="Highlight"
                     Text="打开 中文Wiki" EventType="打开网页" EventData="https://zh.minecraft.wiki/" ToolTip="点击打开网页" />
+
         </StackPanel>
     </local:MyCard>
 
 <local:MyCard Title="其他功能" CanSwap="True" Margin="0,-20,0,50" IsSwaped="True" >
     <StackPanel Margin="25,40,23,15">
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight"
+
+            <local:MyButton Margin="0,10,0,0" Width="140" Height="35"  Padding="13,0,13,0" ColorType="Highlight"
                    Text="打开 B 站" EventType="打开网页" EventData="https://www.bilibili.com/" />
-             </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Red"
+
+            <local:MyButton Margin="0,10,0,0" Width="140" Height="35"  Padding="13,0,13,0" ColorType="Red"
                    Text="打开 oracle官网" EventType="打开网页" EventData="https://developer.oracle.com/zh/" />
-                 </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0"
+
+            <local:MyButton Margin="0,10,0,0" Width="140" Height="35"  Padding="13,0,13,0"
                    Text="打开画图" EventType="打开文件" EventData="mspaint.exe" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
-            <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Red"
-                   Text="复制召唤命令" EventType="复制文本" EventData="/execute as @a at @s run summon Creeper ~ ~2 ~" ToolTip="这条 Minecraft 命令会在每个玩家头顶召唤一只苦力怕！" />
-             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-        <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0"
-                   Text="刷新主页" EventType="刷新主页" ToolTip="这通常用于联网更新主页时刷新信息，对本地文件没啥用" />
-        </StackPanel>
+
+            <local:MyButton Margin="0,10,0,0" Width="140" Height="35"  Padding="13,0,13,0" ColorType="Red"
+            Text="复制召唤命令" EventType="复制文本" EventData="/execute as @a at @s run summon Creeper ~ ~2 ~"
+            ToolTip="这条 Minecraft 命令会在每个玩家头顶召唤一只苦力怕！" />
+
+            <local:MyButton Margin="0,10,0,0" Width="140" Height="35"  Padding="13,0,13,0"
+            Text="刷新主页" EventType="刷新主页" ToolTip="这通常用于联网更新主页时刷新信息，对本地文件没啥用" />
     </StackPanel>
 
 </local:MyCard>
