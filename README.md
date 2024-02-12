@@ -6,7 +6,7 @@
 授权协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
  
 #### 预览图
-![PixPin_2024-02-12_21-09-57](https://github.com/337267950/ChiLing-HomePage-PCL2/assets/64715990/18c9c1a1-7734-4278-aa77-87c0b72737dc)
+![PixPin_2024-02-12_21-09-57](https://github.com/337267950/ChiLing-HomePage-PCL2/assets/64715990/b2480475-fc27-42cf-8d1d-77980a672ed2)
 
 #### 使用方法
 下载主页文件后将其放置在PCL文件夹下即可
