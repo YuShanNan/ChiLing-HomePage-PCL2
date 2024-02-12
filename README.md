@@ -2,8 +2,9 @@
 
 #### 介绍
 一个简洁又不失优雅的PCL2主页
-
+ 
 授权协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+ 
 #### 预览图
 ![ChiLingHomePage_2023-12-10](https://github.com/337267950/ChiLing-HomePage-PCL2/assets/64715990/9a8a7d93-8afe-4d94-acb5-46d0765c452b)
 #### 使用方法
