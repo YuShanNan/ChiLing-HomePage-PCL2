@@ -82,7 +82,7 @@
         简约又不失优雅~
     </TextBlock>
     <TextBlock x:Name="Text3" Style="{StaticResource Text}" Foreground="#00000000">
-       维护人员请看右侧~
+       可惜，作者的更新速度比蜗牛还慢 (=′ー`) 
     </TextBlock>
     <TextBlock Margin="0,13,38,0" Foreground="{DynamicResource ColorBrush5}" HorizontalAlignment="Right"
         Text="山Shān | 宇杉楠Yŭ_Shán_Nán" FontWeight="ExtraBold" FontStyle="Italic"/>
@@ -95,7 +95,7 @@
     </local:MyButton>
 </local:MyCard>
 
-<Border BorderBrush="#954024" BorderThickness="2" CornerRadius="8">
+<Border BorderBrush="#5aa4ae" BorderThickness="3" CornerRadius="8">
 	<Border.Background>
 		<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
 			<GradientStop Color="LightCyan" Offset="0.0" />
@@ -105,10 +105,10 @@
 			</Border.Background>
     <StackPanel Margin="25,40,25,0" >
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Image Height="125" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/1699703777440.png" />
+            <Image Height="130" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/1699703777440.png" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="美好的一天!  Have a good time!" FontSize="37" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,25,0,25" Foreground="#954024" >
+            <TextBlock Text="美好的一天!  Have a good time!" FontSize="37" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,47,0,50" FontWeight="Bold" Foreground="#ffffff" >
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Style.Triggers>
@@ -116,7 +116,7 @@
                                     <EventTrigger.Actions>
                                         <BeginStoryboard>
                                             <Storyboard>
-                                                <DoubleAnimation Duration="0:0:0.250" Storyboard.TargetProperty="FontSize" To="43" />
+                                                <DoubleAnimation Duration="0:0:0.250" Storyboard.TargetProperty="FontSize" To="45" />
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </EventTrigger.Actions>
@@ -195,7 +195,7 @@
    </local:MyCard>
 </Grid>
   
-<local:MyCard Title="资源网站" CanSwap="True" Margin="0,0,0,20" IsSwaped="True">
+<local:MyCard Title="资源网站" CanSwap="True" Margin="0,0,0,20" >
     <StackPanel>
         <Grid>
             <Grid.RowDefinitions>
@@ -220,7 +220,7 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0">
-                <Image Height="50" Margin="0,0,0,0" Source="https://www.mcbbs.net/template/mcbbs/image/logo_sc.png" />
+                <Image Height="50" Margin="0,0,0,0" Source="http://imgpub.hhhhhy.kim/2024/03/02/65e327cca01bc.png" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
                 <Image Height="50" Margin="0,0,0,0" Source="https://www.mcmod.cn/images/logo.gif" />
@@ -253,7 +253,7 @@
                 <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
                 Text="打开 MCBBS" EventType="打开网页"
                 EventData="https://www.mcbbs.net/"
-                ToolTip="Minecraft中文论坛,国内最大的MC社区,拥有国内最大的国际版玩家群体及最多的社区资源." />
+                ToolTip="已永久关闭了(悲 (喜." />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1">
                 <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
@@ -305,7 +305,7 @@
     </StackPanel>
 </local:MyCard>
 
-<local:MyCard Title="联机相关" CanSwap="True" Margin="0,0,0,25" IsSwaped="True">
+<local:MyCard Title="联机相关" CanSwap="True" Margin="0,0,0,25" >
     <StackPanel Margin="0,7,0,7">
         <Grid>
             <Grid.RowDefinitions>
