@@ -2,7 +2,7 @@
 	<!-- 
         **PCL2炽翎主页**
 	By： 雨杉楠Yu_Shan_Nan
-	维护：山Shān / 宇杉楠Yŭ_Shán_Nán(其实，是同一个人)
+	维护：山Shān / 宇杉楠 (其实，是同一个人)
 	仓库：https://github.com/337267950/ChiLing-HomePage-PCL2/
 	协议：CC BY-NC-SA 4.0
     版本：0.4.0-Beta
@@ -29,6 +29,37 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="Margin" Value="65,12,0,0"/>
     </Style>
+
+    <Style  TargetType="{x:Type GroupBox}" x:Key="Group">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type GroupBox}">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Border x:Name="border" Grid.Row="0" SnapsToDevicePixels="True" BorderBrush="{TemplateBinding Background}" Background="{DynamicResource ColorBrush3}" HorizontalAlignment="Stretch" BorderThickness="0"  CornerRadius="5,5,0,0" >
+                            <Grid Margin="5">
+                                <ContentPresenter Name="header" Visibility="Collapsed" ContentSource="Header" RecognizesAccessKey="True" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock FontSize="{TemplateBinding FontSize}" Foreground="{TemplateBinding Foreground}" Text="{Binding ElementName=header, Path=Content}" FontFamily="LXGW WenKai" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="1" BorderBrush="{TemplateBinding Background}" Background="{DynamicResource ColorBrush8}" SnapsToDevicePixels="True" BorderThickness="2,0,2,2" CornerRadius="0,0,5,5" >
+                            <ContentPresenter Margin="10" x:Name="cpmdi" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Header" Value="{x:Null}">
+                            <Setter TargetName="cpmdi" Property="Margin" Value="10"/>
+                            <Setter TargetName="border" Property="Height" Value="32"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <ControlTemplate TargetType="ContentControl" x:Key="Separator" >
         <Grid Margin="0,0,0,15">
             <Grid.ColumnDefinitions>
@@ -85,7 +116,7 @@
        可惜，作者的更新速度比蜗牛还慢 (=′ー`) 
     </TextBlock>
     <TextBlock Margin="0,13,38,0" Foreground="{DynamicResource ColorBrush5}" HorizontalAlignment="Right"
-        Text="山Shān | 宇杉楠Yŭ_Shán_Nán" FontWeight="ExtraBold" FontStyle="Italic"/>
+        Text="山Shān | 宇杉楠YǔShānNán " FontWeight="ExtraBold" FontStyle="Italic"/>
     <local:MyButton Margin="0,10,15,10" Width="15" Height="15" HorizontalAlignment="Right" ToolTip="刷新" EventType="刷新主页">
         <Path Fill="{DynamicResource ColorBrush4}" Stretch="Fill" Width="13" Height="15">
             <Path.Data>
@@ -95,7 +126,7 @@
     </local:MyButton>
 </local:MyCard>
 
-<Border BorderBrush="#5aa4ae" BorderThickness="3" CornerRadius="8">
+<Border BorderBrush="{DynamicResource ColorBrush3}" BorderThickness="3" CornerRadius="8" >
 	<Border.Background>
 		<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
 			<GradientStop Color="LightCyan" Offset="0.0" />
@@ -136,66 +167,95 @@
                 </TextBlock>
         </StackPanel>
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,-2">
-        <Image Height="30" Source="http://image.hhhhhy.kim/45/81.png" />
+        <Image Height="40" Source="http://image.hhhhhy.kim/45/81.png" />
     </StackPanel>
     </StackPanel>
 </Border>
 
-<Grid UseLayoutRounding="True">
-    <Grid.RowDefinitions>
-        <RowDefinition></RowDefinition>
-    </Grid.RowDefinitions>
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="20*"></ColumnDefinition>
-        <ColumnDefinition Width="*"></ColumnDefinition>
-        <ColumnDefinition Width="11*"></ColumnDefinition>
-    </Grid.ColumnDefinitions>
-    <GridSplitter Grid.Column="1" Width="5" Margin="0,0,0,20" Opacity="0"
-        VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
 
-<local:MyCard Title="快捷工具" CanSwap="True" Margin="0,20,0,20" IsSwaped="True">
-    <StackPanel>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="8*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="7*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="7*" />
-            </Grid.ColumnDefinitions>
-            <GroupBox Header="百宝箱" BorderBrush="{DynamicResource ColorBrush3}" Margin="10,40,10,10" Grid.Row="0" >
-                <StackPanel>
-                    <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" 
-                    Text="今日人品" EventType="今日人品" />
-                    <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ToolTip="将物理内存占用降低约1/3,不仅限于MC!&#xA;如果使用机械硬盘,这可能会导致一小段时间的严重卡顿&#xA;使用 --memory 参数启动PCL可以静默执行内存优化。"
-                    Text="内存优化" EventType="内存优化" />
-                    <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ToolTip="清理PCL的缓存与MC的日志、崩溃报告等垃圾文件"
-                    Text="清理游戏垃圾" EventType="清理游戏垃圾" />
-                    <local:MyButton Margin="5,10,5,10" Width="150" Height="35" HorizontalAlignment="Center" ColorType="red" ToolTip="点下有惊喜呦"
-                    Text="千万别点" EventType="千万别点" />
+<!--
+	<GroupBox Margin="10" Header="GroupBox自定义示例" MinWidth="200" FontSize="15" FontFamily="思源黑体" HorizontalAlignment="Left" Foreground="Red" Style="{StaticResource Group}" Background="Teal">
+-->
+
+    <local:MyCard Title="快捷工具" CanSwap="True" Margin="0,20,0,20" IsSwaped="True">
+        <StackPanel>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="8*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="11*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+                <GroupBox Header="百宝箱" Margin="35,40,-10,10"  Foreground="#000000" Style="{StaticResource Group}" Background="{DynamicResource ColorBrush3}" >
+                    <StackPanel>
+                        <local:MyButton Margin="5,10,5,10" Width="140" Height="35" HorizontalAlignment="Center" ColorType="Highlight"
+                        Text="今日人品" EventType="今日人品" />
+                        <local:MyButton Margin="5,10,5,10" Width="140" Height="35" HorizontalAlignment="Center" ToolTip="将物理内存占用降低约1/3,不仅限于MC!&#xA;如果使用机械硬盘,这可能会导致一小段时间的严重卡顿&#xA;使用 --memory 参数启动PCL可以静默执行内存优化。"
+                        Text="内存优化" EventType="内存优化" />
+                        <local:MyButton Margin="5,10,5,10" Width="140" Height="35" HorizontalAlignment="Center" ToolTip="清理PCL的缓存与MC的日志、崩溃报告等垃圾文件"
+                        Text="清理游戏垃圾" EventType="清理游戏垃圾" />
+                        <local:MyButton Margin="5,10,5,10" Width="140" Height="35" HorizontalAlignment="Center" ColorType="red" ToolTip="点下有惊喜呦"
+                        Text="千万别点" EventType="千万别点" />
+                    </StackPanel>
+                </GroupBox>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
+                    <Image Height="50" Margin="15,-1,0,0" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/grass-ChaoCho.png" />
                 </StackPanel>
-            </GroupBox>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
-                <Image Height="50" Margin="7,-1,0,0" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/grass-ChaoCho.png" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="2" Grid.RowSpan="2">
-                <TextBlock Margin="0,0,0,0" Foreground="{DynamicResource ColorBrush5}" FontSize="27" Text="这里不知道要放啥" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </StackPanel>
-        </Grid>
-    </StackPanel>
-</local:MyCard>
 
-    <local:MyCard Title="♨♨♨" Margin="0,20,0,20" Grid.Row="0" Grid.Column="3" CanSwap="True" IsSwaped="True">
-        <StackPanel Margin="0,40,7,15">
-            <Image Height="250" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/未标题-1.png" />
-            <TextBlock Margin="0,5,0,0" Foreground="{DynamicResource ColorBrush4}" FontSize="27" Text="作者皮肤" HorizontalAlignment="Center"/>
-       </StackPanel>
-   </local:MyCard>
-</Grid>
+                <GroupBox Header="相关资源" Grid.Column="1" Grid.ColumnSpan="4" Margin="25,40,40,10" Foreground="#000000" Style="{StaticResource Group}" Background="{DynamicResource ColorBrush3}">
+                    <StackPanel>
+                        <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,5,0,0">
+                                    <local:MyButton Margin="0,20,5,8" Width="140" Height="35" ColorType="HighLight"
+                                        Text="打开记事本" EventType="打开文件" EventData="notepad.exe" />
+                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                                            Text="打开 PCL 日志" EventType="打开文件" EventData="Log1.txt"
+                                            ToolTip="PCL2 的日志文件就在 PCL 文件夹内，且名为 Log1.txt" />               
+                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35" ColorType="HighLight"
+                                            Text="定位游戏启动脚本" EventType="打开文件" EventData="explorer.exe|/select,LatestLaunch.bat" 
+                                            ToolTip="PCL2 会将上一次启动 MC 的脚本保存在 PCL 文件夹内，且名为 LatestLaunch.bat。&#xA;点击按钮会打开文件管理器，并且借助参数要求它选中这个文件。" />
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1" Margin="0,50,0,0">
+                                    <local:MyButton Margin="0,0,0,8" Width="140" Height="35"
+                                        Text="设置个性化" EventType="切换页面" EventData="3|1"
+                                        ToolTip="点击切换到个性化界面" />
+                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                                        Text="JDK17下载" EventType="打开网页" EventData="https://www.oracle.com/cn/java/technologies/downloads/#jdk17-windows"
+                                        ToolTip="打开浏览器并跳转到JDK17的下载界面" />            
+                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                                        Text="JAVA8下载" EventType="打开网页" EventData="https://www.java.com/en/download/manual.jsp" 
+                                        ToolTip="打开浏览器并跳转到JDK8的下载界面" />
+                            </StackPanel>
+
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Grid.Column="2" Margin="0,5,0,0">
+                                    <local:MyButton Margin="5,20,0,8" Width="140" Height="35" ColorType="HighLight"
+                                        Text="IBM JDK17下载" EventType="打开网页" EventData="https://developer.ibm.com/languages/java/semeru-runtimes/downloads/"
+                                        ToolTip="打开浏览器并跳转到IBM JDK17的下载界面,点击标有Latest的版本后面的JDK栏的&#xA;标蓝msi字样开始下载。可降低内存占用，但兼容性不好。" />
+                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                                        Text="「」" EventType="" EventData=""
+                                        ToolTip="不知道要放啥" />            
+                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35" ColorType="HighLight"
+                                        Text="「」" EventType="" EventData="" 
+                                        ToolTip="不知道要放啥" />
+                            </StackPanel>
+                        </Grid>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+        </StackPanel>
+    </local:MyCard>
+
+
   
-<local:MyCard Title="资源网站" CanSwap="True" Margin="0,0,0,20" >
+<local:MyCard Title="资源网站" CanSwap="True" Margin="0,0,0,22" >
     <StackPanel>
         <Grid>
             <Grid.RowDefinitions>
@@ -235,16 +295,16 @@
 
             <!-- ↓↓第二行图片↓↓ -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0">
-                <Image Height="45" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/MCNav_logo.png" />
+                <Image Height="38" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/MCNav_logo.png" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1">
-                <Image Height="28" Margin="0,0,0,0" Source="https://www.chunkbase.com/img/logo.png" />
+                <Image Height="25" Margin="0,0,0,0" Source="https://www.chunkbase.com/img/logo.png" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="2">
-                <Image Height="33" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/CurseforgeLogo.png" />
+                <Image Height="30" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/CurseforgeLogo.png" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="3">
-                <Image Height="38" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/ModrinthLogo.png" />
+                <Image Height="35" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/ModrinthLogo.png" />
             </StackPanel>
 
             <!-- 分-=-=-=-=-=-割-=-=-=-=-=-线 (上图片,下按钮)  -->
@@ -305,7 +365,7 @@
     </StackPanel>
 </local:MyCard>
 
-<local:MyCard Title="联机相关" CanSwap="True" Margin="0,0,0,25" >
+<local:MyCard Title="联机相关" CanSwap="True" Margin="0,0,0,45" >
     <StackPanel Margin="0,7,0,7">
         <Grid>
             <Grid.RowDefinitions>
@@ -317,13 +377,7 @@
                 <ColumnDefinition Width="10*" />
                 <ColumnDefinition Width="10*" />
             </Grid.ColumnDefinitions>
-            <GroupBox BorderBrush="{DynamicResource ColorBrush2}" Margin="10,40,10,10" Grid.RowSpan="2" >
-                <GroupBox.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="http://image.hhhhhy.kim/45/Cobweb.png" Height="25" Margin="0,-5,0,0"/>
-                        <TextBlock FontWeight="Bold">内网穿透</TextBlock>
-                    </StackPanel>
-                </GroupBox.Header>
+            <GroupBox  Margin="10,40,10,10" Header="内网穿透" Grid.RowSpan="2" Foreground="#000000" Style="{StaticResource Group}" Background="{DynamicResource ColorBrush3}">
                 <StackPanel>
                     <local:MyButton Style="{StaticResource AboutOl}" ColorType="HighLight"
                     Text="Sakura Frp" EventData="https://www.natfrp.com/"
@@ -351,13 +405,7 @@
                 </StackPanel>
             </GroupBox>
 
-            <GroupBox  BorderBrush="#e18a3b" Margin="10,40,10,10" Grid.Column="1" BorderThickness="2">
-                <GroupBox.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="http://image.hhhhhy.kim/45/Steve.png" Height="25" Margin="0,-10,0,0"/>
-                        <TextBlock FontWeight="Bold">皮肤站</TextBlock>
-                    </StackPanel>
-                </GroupBox.Header>
+            <GroupBox Margin="10,40,10,10" Header="皮肤站" Grid.Column="1" Foreground="#000000" Style="{StaticResource Group}" Background="{DynamicResource ColorBrush3}">
                 <StackPanel>
                     <local:MyButton Margin="5,20,5,10" Width="150" Height="35" HorizontalAlignment="Center"
                     Text="Little Skin" EventType="打开网页" ColorType="red"
@@ -370,13 +418,7 @@
                 </StackPanel>
             </GroupBox>
 
-            <GroupBox BorderBrush="{DynamicResource ColorBrush2}" Margin="10,40,10,10" Grid.Column="2" Grid.RowSpan="2" >
-                <GroupBox.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <Image Source="pack://application:,,,/images/Blocks/CommandBlock.png" Height="20" Margin="0,-5,0,0"/>
-                        <TextBlock FontWeight="Bold">服务器核心</TextBlock>
-                    </StackPanel>
-                </GroupBox.Header>
+            <GroupBox Header="服务器核心" Margin="10,40,10,10" Grid.Column="2" Grid.RowSpan="2" Foreground="#000000" Style="{StaticResource Group}" Background="{DynamicResource ColorBrush3}">
                 <StackPanel>
                     <local:MyButton Style="{StaticResource AboutOl}" ColorType="HighLight"
                     Text="Paper" EventData="https://papermc.io/"
@@ -411,76 +453,21 @@
     </StackPanel>
 </local:MyCard>
 
- <local:MyCard Title="相关资源" CanSwap="True" Margin="0,2,0,45" IsSwaped="True">
-    <StackPanel Margin="23,40,23,15">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10*" />
-                <ColumnDefinition Width="10*" />
-            </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
-                <Image Height="210" Margin="-5,0,0,0" Source="http://image.hhhhhy.kim/45/Warden_Left.png"  />
-            </StackPanel>
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="4">
-                <Image Height="210" Margin="0,0,-5,0" Source="http://image.hhhhhy.kim/45/Warde.png" />
-            </StackPanel>
-
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Grid.Column="1" >
-                    <local:MyButton Margin="0,20,5,8" Width="140" Height="35" ColorType="HighLight"
-                        Text="打开记事本" EventType="打开文件" EventData="notepad.exe" />
-                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
-                            Text="打开 PCL 日志" EventType="打开文件" EventData="Log1.txt"
-                            ToolTip="PCL2 的日志文件就在 PCL 文件夹内，且名为 Log1.txt" />               
-                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35" ColorType="HighLight"
-                            Text="定位游戏启动脚本" EventType="打开文件" EventData="explorer.exe|/select,LatestLaunch.bat" 
-                            ToolTip="PCL2 会将上一次启动 MC 的脚本保存在 PCL 文件夹内，且名为 LatestLaunch.bat。&#xA;点击按钮会打开文件管理器，并且借助参数要求它选中这个文件。" />
-            </StackPanel>
-
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="2">
-                    <local:MyButton Margin="0,28,0,8" Width="140" Height="35"
-                        Text="设置个性化" EventType="切换页面" EventData="3|1"
-                        ToolTip="点击切换到个性化界面" />
-                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
-                        Text="JDK17下载" EventType="打开网页" EventData="https://www.oracle.com/cn/java/technologies/downloads/#jdk17-windows"
-                        ToolTip="打开浏览器并跳转到JDK17的下载界面" />            
-                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
-                        Text="JAVA8下载" EventType="打开网页" EventData="https://www.java.com/en/download/manual.jsp" 
-                        ToolTip="打开浏览器并跳转到JDK8的下载界面" />
-            </StackPanel>
-
-            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Grid.Column="3">
-                    <local:MyButton Margin="5,20,0,8" Width="140" Height="35" ColorType="HighLight"
-                        Text="IBM JDK17下载" EventType="打开网页" EventData="https://developer.ibm.com/languages/java/semeru-runtimes/downloads/"
-                        ToolTip="打开浏览器并跳转到IBM JDK17的下载界面,点击标有Latest的版本后面的JDK栏的&#xA;标蓝msi字样开始下载。可降低内存占用，但兼容性不好。" />
-                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
-                        Text="「」" EventType="" EventData=""
-                        ToolTip="不知道要放啥" />            
-                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35" ColorType="HighLight"
-                        Text="「」" EventType="" EventData="" 
-                        ToolTip="不知道要放啥" />
-            </StackPanel>
-        </Grid>
-    </StackPanel>
-
-</local:MyCard>
 
 <Grid UseLayoutRounding="True">
     <Grid.RowDefinitions>
         <RowDefinition></RowDefinition>
     </Grid.RowDefinitions>
     <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="20*"></ColumnDefinition>
+        <ColumnDefinition Width="12*"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
-        <ColumnDefinition Width="11*"></ColumnDefinition>
+        <ColumnDefinition Width="20*"></ColumnDefinition>
     </Grid.ColumnDefinitions>
     <GridSplitter Grid.Column="1" Width="5" Margin="0,50,0,-20" Opacity="0"
         VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
-    <local:MyCard Title="WIKI" CanSwap="True" Margin="0,-20,0,50" IsSwaped="True" Grid.Row="0" Grid.Column="3">
+
+    <local:MyCard Title="WIKI" CanSwap="True" Margin="0,-20,0,50" IsSwaped="True" >
         <StackPanel Margin="25,40,23,15">
             <Image Height="165" Margin="0,-20,0,-10" VerticalAlignment="Bottom" Source="https://zh.minecraft.wiki/images/Wiki%402x.png?809cd" />
             <local:MyButton Margin="0,0,0,18" Width="150" Height="35" ColorType="Highlight"
@@ -491,8 +478,8 @@
         </StackPanel>
     </local:MyCard>
 
-<local:MyCard Title="其他功能" CanSwap="True" Margin="0,-20,0,50" IsSwaped="True" >
-    <StackPanel Margin="25,40,23,15">
+    <local:MyCard Title="其他功能" CanSwap="True" Margin="0,-20,0,50" IsSwaped="True" Grid.Column="3" >
+        <StackPanel Margin="25,40,23,15">
 
             <local:MyButton Margin="0,10,0,0" Width="140" Height="35"  Padding="13,0,13,0" ColorType="Highlight"
                    Text="打开 B 站" EventType="打开网页" EventData="https://www.bilibili.com/" />
@@ -567,11 +554,11 @@
     <Border Background="#A0FFFFFF" Height="20720" Margin="-25,10,-25,-20535" BorderThickness="0,2,0,0" BorderBrush="#954024">
       <StackPanel Margin="40,15,0,10">
         <TextBlock Text="PCL2炽翎主页" Foreground="#954024" FontSize="16" Margin="0,5,5,5" />
-        <TextBlock Text="By：宇杉楠Yŭ_Shán_Nán" />
-        <TextBlock Text="维护：宇杉楠Yŭ_Shán_Nán" />
+        <TextBlock Text="By：宇杉楠YǔShānNán" />
+        <TextBlock Text="版本：v0.8.0-beta" Margin="0,2,0,0" />
         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
           <TextBlock Text="订阅地址: " />
-          <local:MyTextButton Margin="2" Text="暂无😭" EventType="复制文本" EventData="https://news.bugjump.net" ToolTip="点击复制到剪贴板" />
+          <local:MyTextButton Text="http://samiuv.mcfuns.cn/PCL2/Custom.xaml" EventType="复制文本" EventData="http://samiuv.mcfuns.cn/PCL2/Custom.xaml" ToolTip="点击复制到剪贴板" />
         </StackPanel>
         <!-- <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
           <TextBlock Text="官方网站: " />
@@ -579,7 +566,7 @@
         </StackPanel> -->
         <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
           <TextBlock Text="Github: " />
-          <local:MyTextButton Margin="2" Text="https://github.com/337267950/ChiLing-HomePage-PCL2" EventType="打开网页" EventData="https://github.com/337267950/ChiLing-HomePage-PCL2" ToolTip="点击打开Github" />
+          <local:MyTextButton Text="https://github.com/337267950/ChiLing-HomePage-PCL2" EventType="打开网页" EventData="https://github.com/337267950/ChiLing-HomePage-PCL2" ToolTip="点击打开Github" />
         </StackPanel>
         <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
           <TextBlock Text="无特殊声明本主页采用 " />
