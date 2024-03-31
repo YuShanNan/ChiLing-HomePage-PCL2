@@ -2,7 +2,6 @@
 	<!-- 
         **PCL2炽翎主页**
 	By： 雨杉楠Yu_Shan_Nan
-	维护：山Shān / 宇杉楠 (其实，是同一个人)
 	仓库：https://github.com/337267950/ChiLing-HomePage-PCL2/
 	协议：CC BY-NC-SA 4.0
     版本：0.4.0-Beta
@@ -212,37 +211,38 @@
                             <ColumnDefinition Width="1*" />
                             <ColumnDefinition Width="1*" />
                         </Grid.ColumnDefinitions>
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,5,0,0">
-                                    <local:MyButton Margin="0,20,5,8" Width="140" Height="35" ColorType="HighLight"
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Right" Margin="0,-10,0,0">
+                                    <local:MyButton Margin="0,20,0,10" Width="140" Height="35" ColorType="HighLight"
                                         Text="打开记事本" EventType="打开文件" EventData="notepad.exe" />
-                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                                    <local:MyButton Margin="0,10,0,10" Width="140" Height="35"
                                             Text="打开 PCL 日志" EventType="打开文件" EventData="Log1.txt"
                                             ToolTip="PCL2 的日志文件就在 PCL 文件夹内，且名为 Log1.txt" />               
-                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35" ColorType="HighLight"
+                                    <local:MyButton Margin="0,10,0,8" Width="140" Height="35" ColorType="HighLight"
                                             Text="定位游戏启动脚本" EventType="打开文件" EventData="explorer.exe|/select,LatestLaunch.bat" 
                                             ToolTip="PCL2 会将上一次启动 MC 的脚本保存在 PCL 文件夹内，且名为 LatestLaunch.bat。&#xA;点击按钮会打开文件管理器，并且借助参数要求它选中这个文件。" />
                             </StackPanel>
 
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1" Margin="0,50,0,0">
-                                    <local:MyButton Margin="0,0,0,8" Width="140" Height="35"
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1" Margin="0,65,0,0">
+                                    <!-- <Image Height="65" Margin="0,0,0,0" Source="https://zh.minecraft.wiki/images/Nether_portal_%28animated%29.png?441e3" /> -->
+                                    <local:MyButton Margin="0,0,0,10" Width="140" Height="35"
                                         Text="设置个性化" EventType="切换页面" EventData="3|1"
                                         ToolTip="点击切换到个性化界面" />
-                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                                    <local:MyButton Margin="0,10,0,10" Width="140" Height="35"
                                         Text="JDK17下载" EventType="打开网页" EventData="https://www.oracle.com/cn/java/technologies/downloads/#jdk17-windows"
                                         ToolTip="打开浏览器并跳转到JDK17的下载界面" />            
-                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                                    <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
                                         Text="JAVA8下载" EventType="打开网页" EventData="https://www.java.com/en/download/manual.jsp" 
                                         ToolTip="打开浏览器并跳转到JDK8的下载界面" />
                             </StackPanel>
 
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Grid.Column="2" Margin="0,5,0,0">
-                                    <local:MyButton Margin="5,20,0,8" Width="140" Height="35" ColorType="HighLight"
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Grid.Column="2" Margin="0,-10,0,0">
+                                    <local:MyButton Margin="0,20,0,10" Width="140" Height="35" ColorType="HighLight"
                                         Text="IBM JDK17下载" EventType="打开网页" EventData="https://developer.ibm.com/languages/java/semeru-runtimes/downloads/"
                                         ToolTip="打开浏览器并跳转到IBM JDK17的下载界面,点击标有Latest的版本后面的JDK栏的&#xA;标蓝msi字样开始下载。可降低内存占用，但兼容性不好。" />
-                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35"
+                                    <local:MyButton Margin="0,10,0,10" Width="140" Height="35"
                                         Text="「」" EventType="" EventData=""
                                         ToolTip="不知道要放啥" />            
-                                    <local:MyButton Margin="0,8,0,8" Width="140" Height="35" ColorType="HighLight"
+                                    <local:MyButton Margin="0,10,0,0" Width="140" Height="35" ColorType="HighLight"
                                         Text="「」" EventType="" EventData="" 
                                         ToolTip="不知道要放啥" />
                             </StackPanel>
@@ -280,7 +280,7 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0">
-                <Image Height="50" Margin="0,0,0,0" Source="http://imgpub.hhhhhy.kim/2024/03/02/65e327cca01bc.png" />
+                <Image Height="54" Margin="0,0,0,-5" Source="http://image.hhhhhy.kim/45/yjt.png" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
                 <Image Height="50" Margin="0,0,0,0" Source="https://www.mcmod.cn/images/logo.gif" />
@@ -310,50 +310,50 @@
             <!-- 分-=-=-=-=-=-割-=-=-=-=-=-线 (上图片,下按钮)  -->
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0">
-                <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
-                Text="打开 MCBBS" EventType="打开网页"
-                EventData="https://www.mcbbs.net/"
-                ToolTip="已永久关闭了(悲 (喜." />
+                <local:MyButton Margin="0,10,0,0" Width="150" Height="35"
+                Text="打开 MineBBS" EventType="打开网页"
+                EventData="https://www.minebbs.com/"
+                ToolTip="一个不怎么知名的网站,定位类似于MCBBS,基岩版、服务端内容居多." />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1">
-                <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
+                <local:MyButton Margin="0,10,0,0" Width="150" Height="35"
                 Text="打开 MC百科" EventType="打开网页"
                 EventData="https://www.mcmod.cn/" 
                 ToolTip="MC百科,最大的Minecraft中文Mod百科." />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="2">
-                <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
+                <local:MyButton Margin="0,10,0,0" Width="150" Height="35"
                 Text="打开 苦力怕论坛" EventType="打开网页"
                 EventData="https://klpbbs.com/"
                 ToolTip="klpbbs 苦力怕论坛,拥有大量基岩版搬运、汉化资源." />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="3">
-                <local:MyButton Margin="0,10,0,0" Width="140" Height="35" 
+                <local:MyButton Margin="0,10,0,0" Width="150" Height="35" 
                 Text="打开 PlanetMinecraft" EventType="打开网页" 
             EventData=" https://www.planetminecraft.com/"
             ToolTip="拥有大量社区资源,能够找到许多奇奇怪怪的Mod,皮肤,数据包等" />
             </StackPanel>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0">
-                <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
+                <local:MyButton Margin="0,5,0,0" Width="150" Height="35" 
             Text="打开 MCNav" EventType="打开网页" 
             EventData="https://www.mcnav.net/"
             ToolTip="一个我的世界导航站,汇聚了大量优质网站,有了它,就有了一切(" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="1">
-                <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
+                <local:MyButton Margin="0,5,0,0" Width="150" Height="35" 
             Text="打开 Chunkbase" EventType="打开网页" 
             EventData="https://www.chunkbase.com/apps/"
             ToolTip="能够查询关于种子的各种信息,群系分布、史莱姆区块等" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="2">
-                <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
+                <local:MyButton Margin="0,5,0,0" Width="150" Height="35" 
             Text="打开 Curseforge" EventType="打开网页" 
             EventData="https://www.curseforge.com/minecraft/"
             ToolTip="老牌国际资源站,拥有全球最多的资源,许多作者在此发布自己的作品" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="3">
-                <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
+                <local:MyButton Margin="0,5,0,0" Width="150" Height="35" 
             Text="打开 Modrinth" EventType="打开网页" 
             EventData="https://www.curseforge.com/minecraft/"
             ToolTip="新兴的资源站,许多作者从CF转来此发展,推荐使用此站" />
@@ -447,7 +447,7 @@
             </GroupBox>
 
             <StackPanel Grid.Row="1" Grid.Column="1">
-                <Image Height="200" Margin="0,-10,0,-10" Source="http://image.hhhhhy.kim/45/zwnwwypo.png" />
+                <Image Height="200" Margin="0,0,0,-10" Source="D:\下载\Floating_Island_Artwork_2.png" />
             </StackPanel>
         </Grid>
     </StackPanel>
@@ -551,11 +551,11 @@
 </local:MyCard>
 
 <StackPanel>
-    <Border Background="#A0FFFFFF" Height="20720" Margin="-25,10,-25,-20535" BorderThickness="0,2,0,0" BorderBrush="#954024">
+    <Border Background="#A0FFFFFF" Height="20720" Margin="-25,10,-25,-20570" BorderThickness="0,2,0,0" BorderBrush="#954024">
       <StackPanel Margin="40,15,0,10">
         <TextBlock Text="PCL2炽翎主页" Foreground="#954024" FontSize="16" Margin="0,5,5,5" />
         <TextBlock Text="By：宇杉楠YǔShānNán" />
-        <TextBlock Text="版本：v0.8.0-beta" Margin="0,2,0,0" />
+        <TextBlock Text="版本：v0.8.4-beta" Margin="0,2,0,0" />
         <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
           <TextBlock Text="订阅地址: " />
           <local:MyTextButton Text="http://samiuv.mcfuns.cn/PCL2/Custom.xaml" EventType="复制文本" EventData="http://samiuv.mcfuns.cn/PCL2/Custom.xaml" ToolTip="点击复制到剪贴板" />
@@ -573,7 +573,7 @@
           <local:MyTextButton Text="CC BY-NC-SA 4.0" EventType="打开网页" EventData="https://creativecommons.org/licenses/by-nc-sa/4.0/ " />
           <TextBlock Text=" 授权。" />
         </StackPanel>
-        <Border Height="20500" Background="{DynamicResource ColorBrush7}" Opacity="0.3" Margin="-40,10,0,0">
+        <!-- <Border Height="20500" Background="{DynamicResource ColorBrush7}" Opacity="0.3" Margin="-40,10,0,0">
           <StackPanel>
             <Grid Margin="0,7,0,15">
               <Grid.ColumnDefinitions>
@@ -589,7 +589,7 @@
               <Line X1="0" X2="100" Stroke="{DynamicResource ColorBrush3}" StrokeThickness="1.5" HorizontalAlignment="Center" Stretch="Fill" Grid.Column="2" />
             </Grid>
           </StackPanel>
-        </Border>
+        </Border> -->
       </StackPanel>
     </Border>
 </StackPanel>
