@@ -182,7 +182,7 @@
                 <GroupBox Margin="35,40,-10,10"  Foreground="#000000" Style="{StaticResource RoundedGroupBoxStyle}" BorderBrush="{DynamicResource ColorBrush3}" >
                     <GroupBox.Header>
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                            <Image Source="D:\下载\照片\Minecraft\Chest.png" Margin="0,0,0,-2" Height="20"/>
+                            <Image Source="http://image.hhhhhy.kim/45/Chest.png" Margin="0,0,0,-2" Height="20"/>
                             <TextBlock Text="百宝箱" Padding="3,2,0,0" FontFamily="YouYuan" FontWeight="Bold" FontSize="14" Foreground="White"/>
                         </StackPanel>
                     </GroupBox.Header>
@@ -198,7 +198,7 @@
                     </StackPanel>
                 </GroupBox>
                 <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
-                    <Image Height="40" Margin="0,0,0,0" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/81.png" />
+                    <TextBlock Text="   " FontSize="19"/>
                 </StackPanel>
 
                 <GroupBox Grid.Column="1" Grid.ColumnSpan="4" Margin="25,40,40,10" Style="{StaticResource RoundedGroupBoxStyle}" BorderBrush="{DynamicResource ColorBrush3}">
@@ -226,12 +226,12 @@
                                             ToolTip="PCL2 会将上一次启动 MC 的脚本保存在 PCL 文件夹内，且名为 LatestLaunch.bat。&#xA;点击按钮会打开文件管理器，并且借助参数要求它选中这个文件。" />
                             </StackPanel>
 
-                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1" Margin="0,70,0,0">
-                                    <!-- <Image Height="65" Margin="0,0,0,0" Source="https://zh.minecraft.wiki/images/Nether_portal_%28animated%29.png?441e3" /> -->
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1" Margin="0,0,0,0">
+                                    <Image Height="55" Margin="0,15,0,0" Source="http://image.hhhhhy.kim/45/into-the-nether.png" />
                                     <local:MyButton Margin="0,0,0,10" Width="145" Height="35"
                                         Text="设置个性化" EventType="切换页面" EventData="3|1"
                                         ToolTip="点击切换到个性化界面" />
-                                    <local:MyButton Margin="0,10,0,0" Width="145" Height="35" ColorType="HighLight"
+                                    <local:MyButton Margin="0,10,0,10" Width="145" Height="35" ColorType="HighLight"
                                         Text="JAVA8下载" EventType="打开网页" EventData="https://www.java.com/en/download/manual.jsp" 
                                         ToolTip="打开浏览器并跳转到JDK8的下载界面" />
                                     <local:MyButton Margin="0,10,0,10" Width="145" Height="35"
@@ -300,7 +300,7 @@
 
             <!-- ↓↓第二行图片↓↓ -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0">
-                <Image Height="38" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/MCNav_logo.png" />
+                <Image Height="45" Margin="0,0,0,0" Source="http://image.hhhhhy.kim/45/mctools.png" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="1">
                 <Image Height="25" Margin="0,0,0,0" Source="https://www.chunkbase.com/img/logo.png" />
@@ -316,7 +316,7 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0">
                 <local:MyButton Margin="0,10,0,0" Width="140" Height="35"
-                Text="打开 MCBBS" EventType="弹出窗口"
+                Text="哀悼 MCBBS" EventType="弹出窗口"
                 EventData="MCBBS|                                    R.I.P\nMCBBS已经被关闭了啊,虽然它很难用,但没有它也\n不行啊,国内最大的中文论坛就这样倒下了...."/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1">
@@ -340,9 +340,9 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0">
                 <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
-            Text="打开 MCNav" EventType="打开网页" 
-            EventData="https://www.mcnav.net/"
-            ToolTip="一个我的世界导航站,汇聚了大量优质网站,有了它,就有了一切(" />
+            Text="打开 MC Tools" EventType="打开网页" 
+            EventData="https://minecraft.tools/en/"
+            ToolTip="实用网站,可惜没有中文&#xA;可以自定义超多东西" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="1">
                 <local:MyButton Margin="0,5,0,0" Width="140" Height="35" 
@@ -567,34 +567,28 @@
             VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
         <Calendar  Name="MyCalendar" HorizontalAlignment="Left" Margin="16,30,0,10" Grid.Row="0" Grid.Column="0"/>
         <InkCanvas EditingMode="Ink" HorizontalAlignment="Right" Margin="0,30,15,10" Grid.Row="0" Grid.Column="2"
-            Width="1024" MaxHeight="768" MinHeight="100" Background="{DynamicResource ColorBrush5}">
+            Width="1024" MaxHeight="768" MinHeight="100" Background="{DynamicResource ColorBrush6}">
         </InkCanvas>
     </Grid>
 </local:MyCard>
 
 <StackPanel>
-    <Border Background="#A0FFFFFF" Height="20720" Margin="-25,10,-25,-20570" BorderThickness="0,2,0,0" BorderBrush="#954024">
+    <Border Background="#A0FFFFFF" Height="20720" Margin="-25,10,-25,-20560" BorderThickness="0,2,0,0" BorderBrush="#954024">
       <StackPanel Margin="40,15,0,10">
         <TextBlock Text="PCL2炽翎主页" Foreground="#954024" FontSize="16" Margin="0,5,5,5" />
-        <TextBlock Text="By：宇杉楠YǔShānNán" />
-        <TextBlock Text="版本：v0.9.0-beta" Margin="0,2,0,0" />
-        <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-          <TextBlock Text="订阅地址: " />
-          <local:MyTextButton Text="http://samiuv.mcfuns.cn/PCL2/Custom.xaml" EventType="复制文本" EventData="http://samiuv.mcfuns.cn/PCL2/Custom.xaml" ToolTip="点击复制到剪贴板" />
-        </StackPanel>
-        <!-- <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-          <TextBlock Text="官方网站: " />
-          <local:MyTextButton Margin="2" Text="" EventType="打开网页" EventData="https://news.bugjump.net" ToolTip="点击打开新闻主页官网" />
-        </StackPanel> -->
-        <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-          <TextBlock Text="Github: " />
-          <local:MyTextButton Text="https://github.com/337267950/ChiLing-HomePage-PCL2" EventType="打开网页" EventData="https://github.com/337267950/ChiLing-HomePage-PCL2" ToolTip="点击打开Github" />
-        </StackPanel>
-        <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
-          <TextBlock Text="无特殊声明本主页采用 " />
-          <local:MyTextButton Text="CC BY-NC-SA 4.0" EventType="打开网页" EventData="https://creativecommons.org/licenses/by-nc-sa/4.0/ " />
-          <TextBlock Text=" 授权。" />
-        </StackPanel>
+        <TextBlock> 
+            By：宇杉楠YǔShānNán<LineBreak/>
+             版本：v0.9.1-beta<LineBreak/>
+            <LineBreak/>
+            订阅地址: <Underline><local:MyTextButton Margin="0,0,0,-3" EventType="复制文本" Text="https://afdian.net/a/Nattiden"
+            EventData="http://samiuv.mcfuns.cn/PCL2/Custom.xaml" ToolTip="点击复制到剪贴板" /></Underline> <LineBreak/>
+            GitHub: <Underline><local:MyTextButton Margin="0,0,0,-3" EventType="打开网页" Text="https://github.com/Light-Beacon/PCL2-NewsHomepage"
+            EventData="https://github.com/337267950/ChiLing-HomePage-PCL2" ToolTip="点击打开GitHub" /></Underline> <LineBreak/>
+            <LineBreak/>
+            无特殊声明本主页采用 <Underline><local:MyTextButton Margin="0,0,0,-2" Text="CC BY-NC-SA 4.0" EventType="打开网页" 
+            EventData="https://creativecommons.org/licenses/by-nc-sa/4.0/ "/></Underline> 授权。
+            <LineBreak/>
+        </TextBlock>
       </StackPanel>
     </Border>
 </StackPanel>
