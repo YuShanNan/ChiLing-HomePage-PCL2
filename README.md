@@ -6,7 +6,7 @@
 授权协议：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
  
 ### 预览图
-![PixPin_2024-03-23_23-00-49](https://github.com/YuShanNan/ChiLing-HomePage-PCL2/assets/64715990/5b2ed3c9-e034-4dd6-a15e-e55d40ea04cd)
+![PixPin_2024-05-01_13-46-39](https://github.com/YuShanNan/ChiLing-HomePage-PCL2/assets/64715990/e8be4545-a004-4c67-bff0-e4b5a6ca6774)
 
 
 ### 使用方法
@@ -19,7 +19,8 @@
 #### 本地导入：
   下载主页文件后将其放置在PCL文件夹下即可
   然后打开PCL2,点击"设置" --→ 左侧栏中选择"个性化" --→ 下滑找到"主页"版块 --→ 选择"读取本地文件"
-![PCL2-自定义主页](https://github.com/337267950/ChiLing-HomePage-PCL2/assets/64715990/425d7777-01cb-4243-9436-108e2ca23ca2)
+![PixPin_2024-05-01_13-48-37](https://github.com/YuShanNan/ChiLing-HomePage-PCL2/assets/64715990/bc642d64-b539-4008-b059-d9304f6a41e6)
+
 
 ### 注意
 **本项目处于早期开发阶段，欢迎提出修改意见。**
