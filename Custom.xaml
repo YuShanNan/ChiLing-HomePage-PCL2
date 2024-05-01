@@ -30,6 +30,15 @@
         <Setter Property="Margin" Value="65,12,0,0"/>
     </Style>
 
+    <Style TargetType="Path" x:Key="AnimatedPathStyle">
+        <Setter Property="Fill" Value="{DynamicResource ColorBrush4}"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Fill" Value="{DynamicResource ColorBrush2}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
     <Style x:Key="RoundedGroupBoxStyle" TargetType="{x:Type GroupBox}">
         <Setter Property="Template">
             <Setter.Value>
@@ -114,7 +123,7 @@
     <TextBlock Margin="0,13,38,0" Foreground="{DynamicResource ColorBrush5}" HorizontalAlignment="Right"
         Text="山Shān | 宇杉楠YǔShānNán " FontWeight="ExtraBold" FontStyle="Italic"/>
     <local:MyIconButton Margin="0,10,15,10" Width="15" Height="15" HorizontalAlignment="Right" ToolTip="刷新" EventType="刷新主页">
-        <Path Fill="{DynamicResource ColorBrush2}" Stretch="Fill" Width="13" Height="15">
+        <Path Stretch="Fill" Width="13" Height="15" Style="{StaticResource AnimatedPathStyle}">
             <Path.Data>
                 <PathGeometry FillRule="Nonzero" Figures="M256.455,8C322.724,8.119,382.892,34.233,427.314,76.685L463.029,40.97C478.149,25.851,504,36.559,504,57.941L504,192C504,205.255,493.255,216,480,216L345.941,216C324.559,216,313.851,190.149,328.97,175.029L370.72,133.279C339.856,104.38 299.919,88.372 257.49,88.006 165.092,87.208 87.207,161.983 88.0059999999999,257.448 88.764,348.009 162.184,424 256,424 297.127,424 335.997,409.322 366.629,382.444 371.372,378.283 378.535,378.536 382.997,382.997L422.659,422.659C427.531,427.531 427.29,435.474 422.177,440.092 378.202,479.813 319.926,504 256,504 119.034,504 8.001,392.967 8,256.002 7.999,119.193 119.646,7.755 256.455,8z"/>
             </Path.Data>
@@ -127,15 +136,19 @@
 		<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
 			<GradientStop Color="LightCyan" Offset="0.0" />
 			<GradientStop Color="LightBlue" Offset="0.5" />
-			<GradientStop Color="DarkTurquoise" Offset="1.0" />
+			<GradientStop Color="<DarkTurquoise>" Offset="1.0" />
 		</LinearGradientBrush>
 			</Border.Background>
     <StackPanel Margin="25,40,25,0" >
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
             <Image Height="130" HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/1699703777440.png" />
+            <Image Height="53" Margin="0,10,0,0"  HorizontalAlignment="Center" Source="http://image.hhhhhy.kim/45/MOJANG_title1.png" />
         </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="美好的一天!  Have a good time!" FontSize="37" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,47,0,50" FontWeight="Bold" Foreground="#ffffff" >
+            <TextBlock Text="美好的一天!  Have a good time!" FontSize="37" Margin="0,47,0,60" FontWeight="Bold" Foreground="#ffffff" >
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="#fff" Direction="320" ShadowDepth="0" BlurRadius="15" Opacity="0.5"/>
+                </TextBlock.Effect>
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
                             <Style.Triggers>
@@ -160,7 +173,7 @@
                             </Style.Triggers>
                         </Style>
                     </TextBlock.Style>
-                </TextBlock>
+            </TextBlock>
         </StackPanel>
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,0">
         <Image Height="40" Source="http://image.hhhhhy.kim/45/81.png" />
@@ -578,11 +591,11 @@
         <TextBlock Text="PCL2炽翎主页" Foreground="#954024" FontSize="16" Margin="0,5,5,5" />
         <TextBlock> 
             By：宇杉楠YǔShānNán<LineBreak/>
-             版本：v0.9.1-beta<LineBreak/>
+             版本：v0.9.2-beta<LineBreak/>
             <LineBreak/>
-            订阅地址: <Underline><local:MyTextButton Margin="0,0,0,-3" EventType="复制文本" Text="https://afdian.net/a/Nattiden"
+            订阅地址: <Underline><local:MyTextButton Margin="0,0,0,-3" EventType="复制文本" Text="http://samiuv.mcfuns.cn/PCL2/Custom.xaml"
             EventData="http://samiuv.mcfuns.cn/PCL2/Custom.xaml" ToolTip="点击复制到剪贴板" /></Underline> <LineBreak/>
-            GitHub: <Underline><local:MyTextButton Margin="0,0,0,-3" EventType="打开网页" Text="https://github.com/Light-Beacon/PCL2-NewsHomepage"
+            GitHub: <Underline><local:MyTextButton Margin="0,0,0,-3" EventType="打开网页" Text="https://github.com/337267950/ChiLing-HomePage-PCL2"
             EventData="https://github.com/337267950/ChiLing-HomePage-PCL2" ToolTip="点击打开GitHub" /></Underline> <LineBreak/>
             <LineBreak/>
             无特殊声明本主页采用 <Underline><local:MyTextButton Margin="0,0,0,-2" Text="CC BY-NC-SA 4.0" EventType="打开网页" 
